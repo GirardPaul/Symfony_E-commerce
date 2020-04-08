@@ -66,10 +66,10 @@ class Categories extends \App\Entity\Categories implements \Doctrine\ORM\Proxy\P
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'libelle', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'image', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'produits'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'libelle', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'image', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'imageFile', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'produits'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'libelle', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'image', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'produits'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'libelle', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'image', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'imageFile', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'produits'];
     }
 
     /**
@@ -179,6 +179,28 @@ class Categories extends \App\Entity\Categories implements \Doctrine\ORM\Proxy\P
     /**
      * {@inheritDoc}
      */
+    public function setImageFile(\Symfony\Component\HttpFoundation\File\File $imageFile = NULL): \App\Entity\Categories
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setImageFile', [$imageFile]);
+
+        return parent::setImageFile($imageFile);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getImageFile(): ?\Symfony\Component\HttpFoundation\File\File
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getImageFile', []);
+
+        return parent::getImageFile();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function getId(): ?int
     {
         if ($this->__isInitialized__ === false) {
@@ -227,7 +249,7 @@ class Categories extends \App\Entity\Categories implements \Doctrine\ORM\Proxy\P
     /**
      * {@inheritDoc}
      */
-    public function setImage(string $image): \App\Entity\Categories
+    public function setImage(?string $image): \App\Entity\Categories
     {
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setImage', [$image]);

@@ -61,6 +61,7 @@ class AdminController extends AbstractController
         return $this->render('admin/modificationProduit.html.twig', [
             "produit" => $produits,
             "form" => $form->createView(),
+            "isModification" => $produits->getId() !== null
         ]);
 
     }

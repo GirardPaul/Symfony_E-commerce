@@ -5,10 +5,13 @@
 {% block monTitre %}Liste des marques{% endblock %}
 
 {% block body %}
+{% if admin %}
+<a href="{{path('creation_categories')}}" class="d-block mb-5 btn btn-success">Ajouter</a>
+{% endif %}
 <div class="row align-items-center">
 
     {% for categorie in categories %}
-    <div class="col-6">
+    <div class="col-6 mb-5">
         <div class="row mb-5 justify-content-around align-items-center">
             <div class="col-6 col-md-4 col-lg-2">
                 <img class="img-fluid" src="{{asset('categories/' ~ categorie.image)}}">
@@ -22,6 +25,22 @@
 
             </div>
         </div>
+        {% if admin %}
+        
+        <div class="row no-gutters">
+    
+    
+            <a href="{{path('modif_categories', {'id' : categorie.id })}}" class="col btn btn-warning">Modifier</a>
+            <form action="{{path('supp_categories', {'id' : categorie.id})}}" class="col" method="post" onsubmit="return confirm('Voulez vous vraiment supprimer cette marque ?')">
+                <input type="hidden" name="_method" value="SUP">
+                <input type="hidden" name="_token" value="{{csrf_token('SUP' ~ categorie.id)}}">
+                <input type="submit" value="Supprimer" class="btn btn-danger w-100">
+            </form>
+    
+    
+        </div>
+        
+        {% endif %}
     </div>
 
     

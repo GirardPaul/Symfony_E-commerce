@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification{% endblock %}
+
+{% block monTitre %}
+
+{% if isModification %}
+Modification de la marque : {{ categorie.libelle  }}
+{% else %}
+Ajout d'une nouvelle marque
+{% endif %}
+{% endblock %}
+
+{% block body %}
+
+{{form_start(form)}}
+{{form_widget(form)}}
+<a class="btn btn-primary" href="{{path('admin_categories')}}">Retour</a>
+<input type="submit" class="btn btn-success" value="Valider">
+{{form_end(form)}}
+
+
+{% endblock %}

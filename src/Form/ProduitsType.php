@@ -2,12 +2,13 @@
 
 namespace App\Form;
 
-use App\Entity\Categories;
 use App\Entity\Produits;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use App\Entity\Categories;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 class ProduitsType extends AbstractType
 {
@@ -15,7 +16,7 @@ class ProduitsType extends AbstractType
     {
         $builder
             ->add('nom')
-            ->add('image')
+            ->add('imageFile', FileType::class, ['required' => false])
             ->add('description')
             ->add('prix')
             ->add('etat')

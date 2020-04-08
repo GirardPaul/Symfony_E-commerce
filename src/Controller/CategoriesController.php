@@ -15,7 +15,8 @@ class CategoriesController extends AbstractController
     {
         $categories = $categoriesRepository->findAll();
         return $this->render('categories/categories.html.twig', [
-            "categories" => $categories
+            "categories" => $categories,
+            "admin" => false
         ]);
     }
 }

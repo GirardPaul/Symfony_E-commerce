@@ -2,7 +2,16 @@
 
 {% block title %}Modification{% endblock %}
 
-{% block monTitre %}Modification du produit : {{ produit.nom }}{% endblock %}
+{% block monTitre %}
+
+{% if isModification %}
+Modification du produit : {{ produit.nom }}
+{% else %}
+Ajout d'un nouveau produit
+{% endif %}
+
+
+{% endblock %}
 
 {% block body %}
 
