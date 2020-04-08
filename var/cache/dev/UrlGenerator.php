@@ -15,5 +15,10 @@ return [
     '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token'], ['text', '/_profiler']], [], []],
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token'], ['text', '/_profiler']], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token'], ['text', '/_profiler']], [], []],
+    'admin_produits' => [[], ['_controller' => 'App\\Controller\\AdminController::index'], [], [['text', '/admin/produits']], [], []],
+    'creation_produits' => [[], ['_controller' => 'App\\Controller\\AdminController::modification'], [], [['text', '/admin/produits/creation']], [], []],
+    'modif_produits' => [['id'], ['_controller' => 'App\\Controller\\AdminController::modification'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/admin/produits']], [], []],
+    'supp_produits' => [['id'], ['_controller' => 'App\\Controller\\AdminController::suppression'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/admin/produits']], [], []],
+    'categories' => [[], ['_controller' => 'App\\Controller\\CategoriesController::index'], [], [['text', '/categories']], [], []],
     'produits' => [[], ['_controller' => 'App\\Controller\\ProduitsController::index'], [], [['text', '/client/produits']], [], []],
 ];

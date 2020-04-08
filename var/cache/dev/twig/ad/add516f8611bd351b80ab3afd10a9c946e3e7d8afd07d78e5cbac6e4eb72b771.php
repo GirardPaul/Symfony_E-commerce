@@ -135,45 +135,60 @@ class __TwigTemplate_a1f2cd8e230556a8000ae1824507064e960738e34d13bc226c099d38afb
         // line 25
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 25, $this->source); })()), 'form_end');
         echo "
-
-<div class=\"row no-gutters\">
+";
+        // line 26
+        if ((isset($context["admin"]) || array_key_exists("admin", $context) ? $context["admin"] : (function () { throw new RuntimeError('Variable "admin" does not exist.', 26, $this->source); })())) {
+            // line 27
+            echo "
+<a href=\"";
+            // line 28
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("creation_produits");
+            echo "\" class=\"d-block btn btn-success\">Ajouter</a>
+";
+        }
+        // line 30
+        echo "<div class=\"row no-gutters\">
 
     ";
-        // line 29
+        // line 32
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["produits"]) || array_key_exists("produits", $context) ? $context["produits"] : (function () { throw new RuntimeError('Variable "produits" does not exist.', 29, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["produits"]) || array_key_exists("produits", $context) ? $context["produits"] : (function () { throw new RuntimeError('Variable "produits" does not exist.', 32, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["produit"]) {
-            // line 30
+            // line 33
             echo "    <div class=\"col-12 col-lg-6 p-1\">
 
 
         <div class=\"card mb-3\">
             <div class=\"row no-gutters align-items-center p-2\">
                 <div class=\"col-12 col-md-4\">
-                    <img class=\"card-img\" src=\"";
-            // line 36
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("produits/" . twig_get_attribute($this->env, $this->source, $context["produit"], "image", [], "any", false, false, false, 36))), "html", null, true);
+                    <img class=\"card-img\" style=\"width: 180px; height: 220px;\" src=\"";
+            // line 39
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("produits/" . twig_get_attribute($this->env, $this->source, $context["produit"], "image", [], "any", false, false, false, 39))), "html", null, true);
             echo "\">
                 </div>
                 <div class=\"col\">
                     <div class=\"card-body\">
                         <h4 class=\"card-title\">";
-            // line 40
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "nom", [], "any", false, false, false, 40), "html", null, true);
+            // line 43
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "nom", [], "any", false, false, false, 43), "html", null, true);
             echo "</h4>
                         <p class=\"card-text\">
 
+                            <div><strong>Marque :</strong> ";
+            // line 46
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["produit"], "categories", [], "any", false, false, false, 46), "libelle", [], "any", false, false, false, 46), "html", null, true);
+            echo "</div>
                             <div><strong>Déscription :</strong> ";
-            // line 43
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "description", [], "any", false, false, false, 43), "html", null, true);
+            // line 47
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "description", [], "any", false, false, false, 47), "html", null, true);
             echo "</div>
                             <div><strong>Prix :</strong> ";
-            // line 44
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "prix", [], "any", false, false, false, 44), "html", null, true);
+            // line 48
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "prix", [], "any", false, false, false, 48), "html", null, true);
             echo "€</div>
                             <div><strong>Grade :</strong> ";
-            // line 45
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "etat", [], "any", false, false, false, 45), "html", null, true);
+            // line 49
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "etat", [], "any", false, false, false, 49), "html", null, true);
             echo "</div>
 
                         </p>
@@ -181,6 +196,32 @@ class __TwigTemplate_a1f2cd8e230556a8000ae1824507064e960738e34d13bc226c099d38afb
                     </div>
                 </div>
             </div>
+            ";
+            // line 56
+            if ((isset($context["admin"]) || array_key_exists("admin", $context) ? $context["admin"] : (function () { throw new RuntimeError('Variable "admin" does not exist.', 56, $this->source); })())) {
+                // line 57
+                echo "            <div class=\"row no-gutters\">
+                <a href=\"";
+                // line 58
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("modif_produits", ["id" => twig_get_attribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 58)]), "html", null, true);
+                echo "\" class=\"col btn btn-warning\">Modifier</a>
+                <form action=\"";
+                // line 59
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("supp_produits", ["id" => twig_get_attribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 59)]), "html", null, true);
+                echo "\" class=\"col\" method=\"post\" onsubmit=\"return confirm('Voulez vous vraiment supprimer ce produit ?')\">
+                    <input type=\"hidden\" name=\"_method\" value=\"SUP\">
+                    <input type=\"hidden\" name=\"_token\" value=\"";
+                // line 61
+                echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("SUP" . twig_get_attribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 61))), "html", null, true);
+                echo "\">
+                    <input type=\"submit\" value=\"Supprimer\" class=\"btn btn-danger w-100\">
+                </form>
+            </div>
+            
+            ";
+            }
+            // line 67
+            echo "
         </div>
     </div>
 
@@ -190,14 +231,14 @@ class __TwigTemplate_a1f2cd8e230556a8000ae1824507064e960738e34d13bc226c099d38afb
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['produit'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 57
+        // line 73
         echo "
 </div>
 
 <div class=\"navigation\">
     ";
-        // line 61
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["produits"]) || array_key_exists("produits", $context) ? $context["produits"] : (function () { throw new RuntimeError('Variable "produits" does not exist.', 61, $this->source); })()));
+        // line 77
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["produits"]) || array_key_exists("produits", $context) ? $context["produits"] : (function () { throw new RuntimeError('Variable "produits" does not exist.', 77, $this->source); })()));
         echo "
 </div>
 
@@ -224,7 +265,7 @@ class __TwigTemplate_a1f2cd8e230556a8000ae1824507064e960738e34d13bc226c099d38afb
 
     public function getDebugInfo()
     {
-        return array (  200 => 61,  194 => 57,  176 => 45,  172 => 44,  168 => 43,  162 => 40,  155 => 36,  147 => 30,  143 => 29,  136 => 25,  125 => 17,  119 => 14,  111 => 9,  108 => 8,  98 => 7,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  241 => 77,  235 => 73,  224 => 67,  215 => 61,  210 => 59,  206 => 58,  203 => 57,  201 => 56,  191 => 49,  187 => 48,  183 => 47,  179 => 46,  173 => 43,  166 => 39,  158 => 33,  154 => 32,  150 => 30,  145 => 28,  142 => 27,  140 => 26,  136 => 25,  125 => 17,  119 => 14,  111 => 9,  108 => 8,  98 => 7,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -254,7 +295,10 @@ class __TwigTemplate_a1f2cd8e230556a8000ae1824507064e960738e34d13bc226c099d38afb
 
 
 {{form_end(form)}}
+{% if admin %}
 
+<a href=\"{{path('creation_produits')}}\" class=\"d-block btn btn-success\">Ajouter</a>
+{% endif %}
 <div class=\"row no-gutters\">
 
     {% for produit in produits %}
@@ -264,13 +308,14 @@ class __TwigTemplate_a1f2cd8e230556a8000ae1824507064e960738e34d13bc226c099d38afb
         <div class=\"card mb-3\">
             <div class=\"row no-gutters align-items-center p-2\">
                 <div class=\"col-12 col-md-4\">
-                    <img class=\"card-img\" src=\"{{asset('produits/' ~ produit.image)}}\">
+                    <img class=\"card-img\" style=\"width: 180px; height: 220px;\" src=\"{{asset('produits/' ~ produit.image)}}\">
                 </div>
                 <div class=\"col\">
                     <div class=\"card-body\">
                         <h4 class=\"card-title\">{{produit.nom}}</h4>
                         <p class=\"card-text\">
 
+                            <div><strong>Marque :</strong> {{produit.categories.libelle}}</div>
                             <div><strong>Déscription :</strong> {{produit.description}}</div>
                             <div><strong>Prix :</strong> {{produit.prix}}€</div>
                             <div><strong>Grade :</strong> {{produit.etat}}</div>
@@ -280,6 +325,18 @@ class __TwigTemplate_a1f2cd8e230556a8000ae1824507064e960738e34d13bc226c099d38afb
                     </div>
                 </div>
             </div>
+            {% if admin %}
+            <div class=\"row no-gutters\">
+                <a href=\"{{path('modif_produits',{'id' : produit.id})}}\" class=\"col btn btn-warning\">Modifier</a>
+                <form action=\"{{path('supp_produits', {'id' : produit.id})}}\" class=\"col\" method=\"post\" onsubmit=\"return confirm('Voulez vous vraiment supprimer ce produit ?')\">
+                    <input type=\"hidden\" name=\"_method\" value=\"SUP\">
+                    <input type=\"hidden\" name=\"_token\" value=\"{{csrf_token('SUP' ~ produit.id)}}\">
+                    <input type=\"submit\" value=\"Supprimer\" class=\"btn btn-danger w-100\">
+                </form>
+            </div>
+            
+            {% endif %}
+
         </div>
     </div>
 

@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des marques{% endblock %}
+
+{% block monTitre %}Liste des marques{% endblock %}
+
+{% block body %}
+<div class="row align-items-center">
+
+    {% for categorie in categories %}
+    <div class="col-6">
+        <div class="row mb-5 justify-content-around align-items-center">
+            <div class="col-6 col-md-4 col-lg-2">
+                <img class="img-fluid" src="{{asset('categories/' ~ categorie.image)}}">
+            </div>
+            <div class="col">
+
+                <h4>
+                    {{categorie.libelle}}
+
+                </h4>
+
+            </div>
+        </div>
+    </div>
+
+    
+    
+    {% endfor %}
+</div>
+
+{% endblock %}

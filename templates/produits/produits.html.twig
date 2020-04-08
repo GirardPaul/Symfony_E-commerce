@@ -23,7 +23,10 @@
 
 
 {{form_end(form)}}
+{% if admin %}
 
+<a href="{{path('creation_produits')}}" class="d-block btn btn-success">Ajouter</a>
+{% endif %}
 <div class="row no-gutters">
 
     {% for produit in produits %}
@@ -33,13 +36,14 @@
         <div class="card mb-3">
             <div class="row no-gutters align-items-center p-2">
                 <div class="col-12 col-md-4">
-                    <img class="card-img" src="{{asset('produits/' ~ produit.image)}}">
+                    <img class="card-img" style="width: 180px; height: 220px;" src="{{asset('produits/' ~ produit.image)}}">
                 </div>
                 <div class="col">
                     <div class="card-body">
                         <h4 class="card-title">{{produit.nom}}</h4>
                         <p class="card-text">
 
+                            <div><strong>Marque :</strong> {{produit.categories.libelle}}</div>
                             <div><strong>Déscription :</strong> {{produit.description}}</div>
                             <div><strong>Prix :</strong> {{produit.prix}}€</div>
                             <div><strong>Grade :</strong> {{produit.etat}}</div>
@@ -49,6 +53,18 @@
                     </div>
                 </div>
             </div>
+            {% if admin %}
+            <div class="row no-gutters">
+                <a href="{{path('modif_produits',{'id' : produit.id})}}" class="col btn btn-warning">Modifier</a>
+                <form action="{{path('supp_produits', {'id' : produit.id})}}" class="col" method="post" onsubmit="return confirm('Voulez vous vraiment supprimer ce produit ?')">
+                    <input type="hidden" name="_method" value="SUP">
+                    <input type="hidden" name="_token" value="{{csrf_token('SUP' ~ produit.id)}}">
+                    <input type="submit" value="Supprimer" class="btn btn-danger w-100">
+                </form>
+            </div>
+            
+            {% endif %}
+
         </div>
     </div>
 

@@ -34,7 +34,8 @@ class ProduitsController extends AbstractController
         );
         return $this->render('produits/produits.html.twig', [
             "produits" => $produits,
-            "form" => $form->createView()
+            "form" => $form->createView(),
+            "admin" => false
         ]);
     }
 }

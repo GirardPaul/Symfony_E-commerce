@@ -90,24 +90,36 @@ class __TwigTemplate_4cf5a60dc7cd247e0004f7cdb861c77a3d4e1863eb3099ebf4017de6a26
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("produits");
         echo "\">Produits</a>
                 </li>
+                <li class=\"nav-item\">
+                    <a class=\"nav-link\" href=\"";
+        // line 29
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_produits");
+        echo "\">Administration</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a class=\"nav-link\" href=\"";
+        // line 32
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("categories");
+        echo "\">Marques</a>
+                </li>
         </div>
     </nav>
     <div class=\"container\">
 
         <h1 class=\"border border-dark rounded text white m-2 p-2 text-center bg-primary\">
             ";
-        // line 33
+        // line 39
         $this->displayBlock('monTitre', $context, $blocks);
         echo "</h1>
         ";
-        // line 34
+        // line 40
         $this->displayBlock('body', $context, $blocks);
-        // line 35
+        // line 41
         echo "    </div>
     ";
-        // line 36
+        // line 42
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 37
+        // line 43
         echo "    <script src=\"https://code.jquery.com/jquery-3.4.1.slim.min.js\"
         integrity=\"sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n\"
         crossorigin=\"anonymous\"></script>
@@ -165,7 +177,7 @@ class __TwigTemplate_4cf5a60dc7cd247e0004f7cdb861c77a3d4e1863eb3099ebf4017de6a26
 
     }
 
-    // line 33
+    // line 39
     public function block_monTitre($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -183,7 +195,7 @@ class __TwigTemplate_4cf5a60dc7cd247e0004f7cdb861c77a3d4e1863eb3099ebf4017de6a26
 
     }
 
-    // line 34
+    // line 40
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -201,7 +213,7 @@ class __TwigTemplate_4cf5a60dc7cd247e0004f7cdb861c77a3d4e1863eb3099ebf4017de6a26
 
     }
 
-    // line 36
+    // line 42
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -231,7 +243,7 @@ class __TwigTemplate_4cf5a60dc7cd247e0004f7cdb861c77a3d4e1863eb3099ebf4017de6a26
 
     public function getDebugInfo()
     {
-        return array (  205 => 36,  187 => 34,  169 => 33,  151 => 9,  132 => 6,  111 => 37,  109 => 36,  106 => 35,  104 => 34,  100 => 33,  90 => 26,  84 => 23,  72 => 14,  66 => 10,  64 => 9,  60 => 8,  55 => 6,  48 => 1,);
+        return array (  217 => 42,  199 => 40,  181 => 39,  163 => 9,  144 => 6,  123 => 43,  121 => 42,  118 => 41,  116 => 40,  112 => 39,  102 => 32,  96 => 29,  90 => 26,  84 => 23,  72 => 14,  66 => 10,  64 => 9,  60 => 8,  55 => 6,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -262,6 +274,12 @@ class __TwigTemplate_4cf5a60dc7cd247e0004f7cdb861c77a3d4e1863eb3099ebf4017de6a26
                 </li>
                 <li class=\"nav-item\">
                     <a class=\"nav-link\" href=\"{{path('produits')}}\">Produits</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a class=\"nav-link\" href=\"{{path('admin_produits')}}\">Administration</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a class=\"nav-link\" href=\"{{path('categories')}}\">Marques</a>
                 </li>
         </div>
     </nav>
