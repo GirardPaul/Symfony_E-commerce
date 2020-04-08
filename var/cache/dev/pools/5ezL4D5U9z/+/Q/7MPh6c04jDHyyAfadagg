@@ -1,0 +1,27 @@
+<?php //%255BApp%255CEntity%255CRechercheProduits%2524minPrix%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Validator\\Constraints\\LessThanOrEqual'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\LessThanOrEqual')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'message' => [
+                'Le prix min doit être plus petit que le max',
+            ],
+            'propertyPath' => [
+                'maxPrix',
+            ],
+            'groups' => [
+                [
+                    'Default',
+                ],
+            ],
+        ],
+    ],
+    [
+        $o[0],
+    ],
+    []
+); }];

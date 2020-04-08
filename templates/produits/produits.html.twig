@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produits{% endblock %}
+
+{% block monTitre %}Liste des téléphones{% endblock %}
+
+{% block body %}
+
+{{form_start(form)}}
+
+<div class="row no-gutters align-items-center text-center">
+
+    <div class="col">
+        {{form_row(form.minPrix)}}
+    </div>
+    <div class="col">
+        {{form_row(form.maxPrix)}}
+    </div>
+    <div class="col-2">
+        <input type="submit" value="Rechercher" class="btn btn-primary">
+    </div>
+</div>
+
+
+{{form_end(form)}}
+
+<div class="row no-gutters">
+
+    {% for produit in produits %}
+    <div class="col-12 col-lg-6 p-1">
+
+
+        <div class="card mb-3">
+            <div class="row no-gutters align-items-center p-2">
+                <div class="col-12 col-md-4">
+                    <img class="card-img" src="{{asset('produits/' ~ produit.image)}}">
+                </div>
+                <div class="col">
+                    <div class="card-body">
+                        <h4 class="card-title">{{produit.nom}}</h4>
+                        <p class="card-text">
+
+                            <div><strong>Déscription :</strong> {{produit.description}}</div>
+                            <div><strong>Prix :</strong> {{produit.prix}}€</div>
+                            <div><strong>Grade :</strong> {{produit.etat}}</div>
+
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {% endfor %}
+
+</div>
+
+<div class="navigation">
+    {{ knp_pagination_render(produits) }}
+</div>
+
+
+
+{% endblock %}
