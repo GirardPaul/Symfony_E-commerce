@@ -161,24 +161,35 @@ class __TwigTemplate_b51745ae8f25d2275dbd31eda56706731861b6831c2f9f6970159c2146a
                 ";
         }
         // line 72
+        echo "
+                ";
+        // line 73
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+            // line 74
+            echo "                        <a class=\"nav-link\" href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("espace_admin");
+            echo "\">Espace Admin</a>
+                ";
+        }
+        // line 76
         echo "        </div>
     </nav>
     <div class=\"container\">
 
         <h1 class=\"border border-dark rounded text white m-2 p-2 text-center bg-primary\">
             ";
-        // line 77
+        // line 81
         $this->displayBlock('monTitre', $context, $blocks);
         echo "</h1>
         ";
-        // line 78
+        // line 82
         $this->displayBlock('body', $context, $blocks);
-        // line 79
+        // line 83
         echo "    </div>
     ";
-        // line 80
+        // line 84
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 81
+        // line 85
         echo "    <script src=\"https://code.jquery.com/jquery-3.4.1.slim.min.js\"
         integrity=\"sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n\"
         crossorigin=\"anonymous\"></script>
@@ -236,7 +247,7 @@ class __TwigTemplate_b51745ae8f25d2275dbd31eda56706731861b6831c2f9f6970159c2146a
 
     }
 
-    // line 77
+    // line 81
     public function block_monTitre($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -254,7 +265,7 @@ class __TwigTemplate_b51745ae8f25d2275dbd31eda56706731861b6831c2f9f6970159c2146a
 
     }
 
-    // line 78
+    // line 82
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -272,7 +283,7 @@ class __TwigTemplate_b51745ae8f25d2275dbd31eda56706731861b6831c2f9f6970159c2146a
 
     }
 
-    // line 80
+    // line 84
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -302,7 +313,7 @@ class __TwigTemplate_b51745ae8f25d2275dbd31eda56706731861b6831c2f9f6970159c2146a
 
     public function getDebugInfo()
     {
-        return array (  276 => 80,  258 => 78,  240 => 77,  222 => 9,  203 => 6,  182 => 81,  180 => 80,  177 => 79,  175 => 78,  171 => 77,  164 => 72,  158 => 69,  155 => 68,  149 => 65,  143 => 62,  140 => 61,  138 => 60,  132 => 56,  126 => 54,  124 => 53,  119 => 51,  105 => 39,  99 => 37,  97 => 36,  92 => 34,  66 => 10,  64 => 9,  60 => 8,  55 => 6,  48 => 1,);
+        return array (  287 => 84,  269 => 82,  251 => 81,  233 => 9,  214 => 6,  193 => 85,  191 => 84,  188 => 83,  186 => 82,  182 => 81,  175 => 76,  169 => 74,  167 => 73,  164 => 72,  158 => 69,  155 => 68,  149 => 65,  143 => 62,  140 => 61,  138 => 60,  132 => 56,  126 => 54,  124 => 53,  119 => 51,  105 => 39,  99 => 37,  97 => 36,  92 => 34,  66 => 10,  64 => 9,  60 => 8,  55 => 6,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -377,6 +388,10 @@ class __TwigTemplate_b51745ae8f25d2275dbd31eda56706731861b6831c2f9f6970159c2146a
                     <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"{{path('deconnexion')}}\">Déconnexion</a>
                     </li>
+                {% endif %}
+
+                {% if is_granted('ROLE_ADMIN') %}
+                        <a class=\"nav-link\" href=\"{{path('espace_admin')}}\">Espace Admin</a>
                 {% endif %}
         </div>
     </nav>

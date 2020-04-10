@@ -17,6 +17,7 @@ return [
         '/admin/categories/creation' => [[['_route' => 'creation_categories', '_controller' => 'App\\Controller\\AdminCategoriesController::modification'], null, null, null, false, false, null]],
         '/admin/produits' => [[['_route' => 'admin_produits', '_controller' => 'App\\Controller\\AdminController::index'], null, null, null, false, false, null]],
         '/admin/produits/creation' => [[['_route' => 'creation_produits', '_controller' => 'App\\Controller\\AdminController::modification'], null, null, null, false, false, null]],
+        '/admin/utilisateurs' => [[['_route' => 'espace_admin', '_controller' => 'App\\Controller\\AdminController::espaceAdmin'], null, null, null, false, false, null]],
         '/inscription' => [[['_route' => 'inscription', '_controller' => 'App\\Controller\\AdminSecuController::index'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'connexion', '_controller' => 'App\\Controller\\AdminSecuController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'deconnexion', '_controller' => 'App\\Controller\\AdminSecuController::deconnexion'], null, null, null, false, false, null]],
@@ -48,6 +49,7 @@ return [
                     .'|produits/([^/]++)(?'
                         .'|(*:230)'
                     .')'
+                    .'|utilisateurs/([^/]++)(*:260)'
                 .')'
             .')/?$}sD',
     ],
@@ -66,6 +68,9 @@ return [
         230 => [
             [['_route' => 'modif_produits', '_controller' => 'App\\Controller\\AdminController::modification'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null],
             [['_route' => 'supp_produits', '_controller' => 'App\\Controller\\AdminController::suppression'], ['id'], ['SUP' => 0], null, false, true, null],
+        ],
+        260 => [
+            [['_route' => 'supp_utilisateur', '_controller' => 'App\\Controller\\AdminController::suppressionUtilisateur'], ['id'], ['SUP' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

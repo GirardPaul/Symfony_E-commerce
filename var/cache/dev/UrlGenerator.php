@@ -23,6 +23,8 @@ return [
     'creation_produits' => [[], ['_controller' => 'App\\Controller\\AdminController::modification'], [], [['text', '/admin/produits/creation']], [], []],
     'modif_produits' => [['id'], ['_controller' => 'App\\Controller\\AdminController::modification'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/admin/produits']], [], []],
     'supp_produits' => [['id'], ['_controller' => 'App\\Controller\\AdminController::suppression'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/admin/produits']], [], []],
+    'espace_admin' => [[], ['_controller' => 'App\\Controller\\AdminController::espaceAdmin'], [], [['text', '/admin/utilisateurs']], [], []],
+    'supp_utilisateur' => [['id'], ['_controller' => 'App\\Controller\\AdminController::suppressionUtilisateur'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/admin/utilisateurs']], [], []],
     'inscription' => [[], ['_controller' => 'App\\Controller\\AdminSecuController::index'], [], [['text', '/inscription']], [], []],
     'connexion' => [[], ['_controller' => 'App\\Controller\\AdminSecuController::login'], [], [['text', '/login']], [], []],
     'deconnexion' => [[], ['_controller' => 'App\\Controller\\AdminSecuController::deconnexion'], [], [['text', '/logout']], [], []],

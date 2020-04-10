@@ -1,6 +1,6 @@
 <?php
 
-namespace ContainerEVWboBV;
+namespace ContainerIERJHhr;
 
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -2136,6 +2136,16 @@ class srcApp_KernelDevDebugContainer extends Container
     }
 
     /**
+     * Gets the private '.errored..service_locator.XUgpMgm.App\Entity\Utilisateur' shared service.
+     *
+     * @return \App\Entity\Utilisateur
+     */
+    protected function getUtilisateurService()
+    {
+        $this->throw('Cannot autowire service ".service_locator.XUgpMgm": it references class "App\\Entity\\Utilisateur" but no such service exists.');
+    }
+
+    /**
      * Gets the private '.legacy_resolve_controller_name_subscriber' shared service.
      *
      * @return \Symfony\Bundle\FrameworkBundle\EventListener\ResolveControllerNameSubscriber
@@ -2190,19 +2200,21 @@ class srcApp_KernelDevDebugContainer extends Container
     }
 
     /**
-     * Gets the private '.service_locator.DAy4.e9' shared service.
+     * Gets the private '.service_locator.EjjhawK' shared service.
      *
      * @return \Symfony\Component\DependencyInjection\ServiceLocator
      */
-    protected function get_ServiceLocator_DAy4_E9Service()
+    protected function get_ServiceLocator_EjjhawKService()
     {
-        return $this->privates['.service_locator.DAy4.e9'] = new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [
+        return $this->privates['.service_locator.EjjhawK'] = new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [
             'App\\Controller\\AdminCategoriesController::index' => ['privates', '.service_locator.LppTwsE', 'get_ServiceLocator_LppTwsEService', false],
             'App\\Controller\\AdminCategoriesController::modification' => ['privates', '.service_locator.6hXADnL', 'get_ServiceLocator_6hXADnLService', false],
             'App\\Controller\\AdminCategoriesController::suppression' => ['privates', '.service_locator.6UFasnB', 'get_ServiceLocator_6UFasnBService', false],
+            'App\\Controller\\AdminController::espaceAdmin' => ['privates', '.service_locator.ZahoQIa', 'get_ServiceLocator_ZahoQIaService', false],
             'App\\Controller\\AdminController::index' => ['privates', '.service_locator.bbhwHxH', 'get_ServiceLocator_BbhwHxHService', false],
             'App\\Controller\\AdminController::modification' => ['privates', '.service_locator.4aF1bYP', 'get_ServiceLocator_4aF1bYPService', false],
             'App\\Controller\\AdminController::suppression' => ['privates', '.service_locator.SPCTU0D', 'get_ServiceLocator_SPCTU0DService', false],
+            'App\\Controller\\AdminController::suppressionUtilisateur' => ['privates', '.service_locator.XUgpMgm', 'get_ServiceLocator_XUgpMgmService', false],
             'App\\Controller\\AdminSecuController::index' => ['privates', '.service_locator.KV7oe7T', 'get_ServiceLocator_KV7oe7TService', false],
             'App\\Controller\\AdminSecuController::login' => ['privates', '.service_locator.L3BqksV', 'get_ServiceLocator_L3BqksVService', false],
             'App\\Controller\\CategoriesController::index' => ['privates', '.service_locator.LppTwsE', 'get_ServiceLocator_LppTwsEService', false],
@@ -2210,9 +2222,11 @@ class srcApp_KernelDevDebugContainer extends Container
             'App\\Controller\\AdminCategoriesController:index' => ['privates', '.service_locator.LppTwsE', 'get_ServiceLocator_LppTwsEService', false],
             'App\\Controller\\AdminCategoriesController:modification' => ['privates', '.service_locator.6hXADnL', 'get_ServiceLocator_6hXADnLService', false],
             'App\\Controller\\AdminCategoriesController:suppression' => ['privates', '.service_locator.6UFasnB', 'get_ServiceLocator_6UFasnBService', false],
+            'App\\Controller\\AdminController:espaceAdmin' => ['privates', '.service_locator.ZahoQIa', 'get_ServiceLocator_ZahoQIaService', false],
             'App\\Controller\\AdminController:index' => ['privates', '.service_locator.bbhwHxH', 'get_ServiceLocator_BbhwHxHService', false],
             'App\\Controller\\AdminController:modification' => ['privates', '.service_locator.4aF1bYP', 'get_ServiceLocator_4aF1bYPService', false],
             'App\\Controller\\AdminController:suppression' => ['privates', '.service_locator.SPCTU0D', 'get_ServiceLocator_SPCTU0DService', false],
+            'App\\Controller\\AdminController:suppressionUtilisateur' => ['privates', '.service_locator.XUgpMgm', 'get_ServiceLocator_XUgpMgmService', false],
             'App\\Controller\\AdminSecuController:index' => ['privates', '.service_locator.KV7oe7T', 'get_ServiceLocator_KV7oe7TService', false],
             'App\\Controller\\AdminSecuController:login' => ['privates', '.service_locator.L3BqksV', 'get_ServiceLocator_L3BqksVService', false],
             'App\\Controller\\CategoriesController:index' => ['privates', '.service_locator.LppTwsE', 'get_ServiceLocator_LppTwsEService', false],
@@ -2221,9 +2235,11 @@ class srcApp_KernelDevDebugContainer extends Container
             'App\\Controller\\AdminCategoriesController::index' => '?',
             'App\\Controller\\AdminCategoriesController::modification' => '?',
             'App\\Controller\\AdminCategoriesController::suppression' => '?',
+            'App\\Controller\\AdminController::espaceAdmin' => '?',
             'App\\Controller\\AdminController::index' => '?',
             'App\\Controller\\AdminController::modification' => '?',
             'App\\Controller\\AdminController::suppression' => '?',
+            'App\\Controller\\AdminController::suppressionUtilisateur' => '?',
             'App\\Controller\\AdminSecuController::index' => '?',
             'App\\Controller\\AdminSecuController::login' => '?',
             'App\\Controller\\CategoriesController::index' => '?',
@@ -2231,9 +2247,11 @@ class srcApp_KernelDevDebugContainer extends Container
             'App\\Controller\\AdminCategoriesController:index' => '?',
             'App\\Controller\\AdminCategoriesController:modification' => '?',
             'App\\Controller\\AdminCategoriesController:suppression' => '?',
+            'App\\Controller\\AdminController:espaceAdmin' => '?',
             'App\\Controller\\AdminController:index' => '?',
             'App\\Controller\\AdminController:modification' => '?',
             'App\\Controller\\AdminController:suppression' => '?',
+            'App\\Controller\\AdminController:suppressionUtilisateur' => '?',
             'App\\Controller\\AdminSecuController:index' => '?',
             'App\\Controller\\AdminSecuController:login' => '?',
             'App\\Controller\\CategoriesController:index' => '?',
@@ -2298,6 +2316,36 @@ class srcApp_KernelDevDebugContainer extends Container
         ], [
             'objectManager' => '?',
             'produit' => 'App\\Entity\\Produits',
+        ]);
+    }
+
+    /**
+     * Gets the private '.service_locator.XUgpMgm' shared service.
+     *
+     * @return \Symfony\Component\DependencyInjection\ServiceLocator
+     */
+    protected function get_ServiceLocator_XUgpMgmService()
+    {
+        return $this->privates['.service_locator.XUgpMgm'] = new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [
+            'objectManager' => ['services', 'doctrine.orm.default_entity_manager', 'getDoctrine_Orm_DefaultEntityManagerService', false],
+            'utilisateur' => ['privates', '.errored..service_locator.XUgpMgm.App\\Entity\\Utilisateur', NULL, 'Cannot autowire service ".service_locator.XUgpMgm": it references class "App\\Entity\\Utilisateur" but no such service exists.'],
+        ], [
+            'objectManager' => '?',
+            'utilisateur' => 'App\\Entity\\Utilisateur',
+        ]);
+    }
+
+    /**
+     * Gets the private '.service_locator.ZahoQIa' shared service.
+     *
+     * @return \Symfony\Component\DependencyInjection\ServiceLocator
+     */
+    protected function get_ServiceLocator_ZahoQIaService()
+    {
+        return $this->privates['.service_locator.ZahoQIa'] = new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [
+            'utilisateurRepository' => ['privates', 'App\\Repository\\UtilisateurRepository', 'getUtilisateurRepositoryService', false],
+        ], [
+            'utilisateurRepository' => 'App\\Repository\\UtilisateurRepository',
         ]);
     }
 
@@ -3189,7 +3237,7 @@ class srcApp_KernelDevDebugContainer extends Container
         include_once \dirname(__DIR__, 4).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/TraceableValueResolver.php';
         include_once \dirname(__DIR__, 4).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/NotTaggedControllerValueResolver.php';
 
-        return $this->privates['debug.argument_resolver.not_tagged_controller'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver(($this->privates['.service_locator.DAy4.e9'] ?? $this->get_ServiceLocator_DAy4_E9Service())), ($this->privates['debug.stopwatch'] ?? ($this->privates['debug.stopwatch'] = new \Symfony\Component\Stopwatch\Stopwatch(true))));
+        return $this->privates['debug.argument_resolver.not_tagged_controller'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver(($this->privates['.service_locator.EjjhawK'] ?? $this->get_ServiceLocator_EjjhawKService())), ($this->privates['debug.stopwatch'] ?? ($this->privates['debug.stopwatch'] = new \Symfony\Component\Stopwatch\Stopwatch(true))));
     }
 
     /**
@@ -3231,7 +3279,7 @@ class srcApp_KernelDevDebugContainer extends Container
         include_once \dirname(__DIR__, 4).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/TraceableValueResolver.php';
         include_once \dirname(__DIR__, 4).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/ServiceValueResolver.php';
 
-        return $this->privates['debug.argument_resolver.service'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver(($this->privates['.service_locator.DAy4.e9'] ?? $this->get_ServiceLocator_DAy4_E9Service())), ($this->privates['debug.stopwatch'] ?? ($this->privates['debug.stopwatch'] = new \Symfony\Component\Stopwatch\Stopwatch(true))));
+        return $this->privates['debug.argument_resolver.service'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver(($this->privates['.service_locator.EjjhawK'] ?? $this->get_ServiceLocator_EjjhawKService())), ($this->privates['debug.stopwatch'] ?? ($this->privates['debug.stopwatch'] = new \Symfony\Component\Stopwatch\Stopwatch(true))));
     }
 
     /**

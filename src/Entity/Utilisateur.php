@@ -85,7 +85,7 @@ class Utilisateur implements UserInterface
 
     /**
      * @ORM\Column(type="integer")
-     * @Assert\Length(min=9, max=15, minMessage="Votre téléphone doit contenir plus de 8 caractères", maxMessage="Votre numéro de téléphone doit contenir moins de 15 caractères")
+     * @Assert\Length(min=8, max=15, minMessage="Votre téléphone doit contenir plus de 8 caractères", maxMessage="Votre numéro de téléphone doit contenir moins de 15 caractères")
      */
     private $phone;
 
@@ -229,7 +229,7 @@ class Utilisateur implements UserInterface
         return [$this->roles];
     }
 
-    public function setRoles(string $roles): self
+    public function setRoles(?string $roles): self
     {
 
         if ($roles === null) {

@@ -27,9 +27,10 @@ class AdminSecuController extends AbstractController
         if($form->isSubmitted() && $form->isValid()){
             $passwordCrypte = $encoder->encodePassword($utilisateur, $utilisateur->getPassword());
             $utilisateur->setPassword($passwordCrypte);
+            $utilisateur->setRoles("ROLE_USER");
             $objectManager->persist($utilisateur);
             $objectManager->flush();
-            return $this->redirectToRoute("produits");
+            return $this->redirectToRoute("connexion");
         }
 
         return $this->render('admin_secu/inscription.html.twig', [

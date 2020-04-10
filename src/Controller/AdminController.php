@@ -4,9 +4,11 @@ namespace App\Controller;
 
 use App\Entity\Produits;
 use App\Entity\RechercheProduits;
+use App\Entity\Utilisateur;
 use App\Form\ProduitsType;
 use App\Form\RechercheProduitsType;
 use App\Repository\ProduitsRepository;
+use App\Repository\UtilisateurRepository;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -75,7 +77,38 @@ class AdminController extends AbstractController
             $objectManager->flush();
             return $this->redirectToRoute("admin_produits");
         }
-
-
     }
+
+    /**
+     * @Route("/admin/utilisateurs", name="espace_admin")
+     */
+    public function espaceAdmin(UtilisateurRepository $utilisateurRepository)
+    {
+        $utilisateurs = $utilisateurRepository->findAll();
+        return $this->render('admin/espaceAdmin.html.twig', [
+            "utilisateurs" => $utilisateurs
+        ]);
+    }
+     /**
+     * @Route("/admin/utilisateurs/{id}", name="supp_utilisateur", methods="SUP")
+     */
+    public function suppressionUtilisateur(Utilisateur $utilisateur, HttpFoundationRequest $request, EntityManagerInterface $objectManager)
+    {
+        if($this->isCsrfTokenValid("SUP".$utilisateur->getId(), $request->get("_token"))){
+            $objectManager->remove($utilisateur);
+            $objectManager->flush();
+            return $this->redirectToRoute("espace_admin");
+        }
+    }
+
+    //  /**
+    //  * @Route("/client/espace/{id}", name="espace_admin")
+    //  */
+    // public function espaceAdmin(UtilisateurRepository $utilisateurRepository)
+    // {
+    //     $utilisateurs = $utilisateurRepository->findAll();
+    //     return $this->render('admin/espaceAdmin.html.twig', [
+    //         "utilisateurs" => $utilisateurs
+    //     ]);
+    // }
 }

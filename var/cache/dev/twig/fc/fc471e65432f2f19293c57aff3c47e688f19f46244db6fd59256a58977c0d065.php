@@ -106,6 +106,7 @@ class __TwigTemplate_f78a918f9fc910d2f99076cb239afbc84e83ddfd2de6d7573e7adb2141a
 
         // line 8
         echo "
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -139,6 +140,7 @@ class __TwigTemplate_f78a918f9fc910d2f99076cb239afbc84e83ddfd2de6d7573e7adb2141a
 {% block monTitre %}Bienvenue dans notre boutique{% endblock %}
 
 {% block body %}
+
 
 {% endblock %}
 ", "home/index.html.twig", "/Applications/MAMP/htdocs/ecommerce/templates/home/index.html.twig");
