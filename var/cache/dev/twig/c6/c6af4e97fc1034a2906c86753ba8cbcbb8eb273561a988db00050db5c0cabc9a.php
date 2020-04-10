@@ -67,10 +67,7 @@ class __TwigTemplate_b51745ae8f25d2275dbd31eda56706731861b6831c2f9f6970159c2146a
 
 <body>
     <nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">
-        <a class=\"navbar-brand\" href=\"";
-        // line 14
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("produits");
-        echo "\">ACS Store</a>
+        <a class=\"navbar-brand\" href=\"/\">ACS Store</a>
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor01\"
             aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
             <span class=\"navbar-toggler-icon\"></span>
@@ -79,34 +76,69 @@ class __TwigTemplate_b51745ae8f25d2275dbd31eda56706731861b6831c2f9f6970159c2146a
         <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">
             <ul class=\"navbar-nav mr-auto\">
                 <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"";
-        // line 23
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("produits");
-        echo "\">Accueil</a>
+                    <a class=\"nav-link\" href=\"/\">Accueil</a>
                 </li>
-                <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"";
-        // line 26
+
+
+                <li class=\"nav-item dropdown\">
+
+                    <a href=\"\" class=\"nav-link dropdown-toggle\" id=\"navbarDropdown\" role=\"button\"
+                        data-toggle=\"dropdown\">Produits</a>
+                    <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
+
+
+                        <a class=\"nav-link\" href=\"";
+        // line 34
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("produits");
         echo "\">Produits</a>
-                </li>
-                <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"";
-        // line 29
+                        <div class=\"dropdown-divider\"></div>
+                        <a class=\"nav-link\" href=\"";
+        // line 36
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_produits");
         echo "\">Administration</a>
+
+
+                    </div>
                 </li>
-                <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"";
-        // line 32
+
+                <li class=\"nav-item dropdown\">
+
+                    <a href=\"#\" class=\"nav-link dropdown-toggle\" id=\"navbarDropdown\" role=\"button\"
+                        data-toggle=\"dropdown\">Marques</a>
+                    <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
+
+
+                        <a class=\"nav-link\" href=\"";
+        // line 49
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("categories");
         echo "\">Marques</a>
+                        <div class=\"dropdown-divider\"></div>
+                        <a class=\"nav-link\" href=\"";
+        // line 51
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_categories");
+        echo "\">Administration</a>
+
+
+                    </div>
+                </li>
+
+                <li class=\"nav-item\">
+                    <a class=\"nav-link\" href=\"";
+        // line 58
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("inscription");
+        echo "\">Inscription</a>
                 </li>
                 <li class=\"nav-item\">
                     <a class=\"nav-link\" href=\"";
-        // line 35
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_categories");
-        echo "\">Administration</a>
+        // line 61
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("connexion");
+        echo "\">Connexion</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a class=\"nav-link\" href=\"";
+        // line 64
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("deconnexion");
+        echo "\">Déconnexion</a>
                 </li>
         </div>
     </nav>
@@ -114,18 +146,18 @@ class __TwigTemplate_b51745ae8f25d2275dbd31eda56706731861b6831c2f9f6970159c2146a
 
         <h1 class=\"border border-dark rounded text white m-2 p-2 text-center bg-primary\">
             ";
-        // line 42
+        // line 71
         $this->displayBlock('monTitre', $context, $blocks);
         echo "</h1>
         ";
-        // line 43
+        // line 72
         $this->displayBlock('body', $context, $blocks);
-        // line 44
+        // line 73
         echo "    </div>
     ";
-        // line 45
+        // line 74
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 46
+        // line 75
         echo "    <script src=\"https://code.jquery.com/jquery-3.4.1.slim.min.js\"
         integrity=\"sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n\"
         crossorigin=\"anonymous\"></script>
@@ -183,7 +215,7 @@ class __TwigTemplate_b51745ae8f25d2275dbd31eda56706731861b6831c2f9f6970159c2146a
 
     }
 
-    // line 42
+    // line 71
     public function block_monTitre($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -201,7 +233,7 @@ class __TwigTemplate_b51745ae8f25d2275dbd31eda56706731861b6831c2f9f6970159c2146a
 
     }
 
-    // line 43
+    // line 72
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -219,7 +251,7 @@ class __TwigTemplate_b51745ae8f25d2275dbd31eda56706731861b6831c2f9f6970159c2146a
 
     }
 
-    // line 45
+    // line 74
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -249,7 +281,7 @@ class __TwigTemplate_b51745ae8f25d2275dbd31eda56706731861b6831c2f9f6970159c2146a
 
     public function getDebugInfo()
     {
-        return array (  223 => 45,  205 => 43,  187 => 42,  169 => 9,  150 => 6,  129 => 46,  127 => 45,  124 => 44,  122 => 43,  118 => 42,  108 => 35,  102 => 32,  96 => 29,  90 => 26,  84 => 23,  72 => 14,  66 => 10,  64 => 9,  60 => 8,  55 => 6,  48 => 1,);
+        return array (  255 => 74,  237 => 72,  219 => 71,  201 => 9,  182 => 6,  161 => 75,  159 => 74,  156 => 73,  154 => 72,  150 => 71,  140 => 64,  134 => 61,  128 => 58,  118 => 51,  113 => 49,  97 => 36,  92 => 34,  66 => 10,  64 => 9,  60 => 8,  55 => 6,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -267,7 +299,7 @@ class __TwigTemplate_b51745ae8f25d2275dbd31eda56706731861b6831c2f9f6970159c2146a
 
 <body>
     <nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">
-        <a class=\"navbar-brand\" href=\"{{path('produits')}}\">ACS Store</a>
+        <a class=\"navbar-brand\" href=\"/\">ACS Store</a>
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor01\"
             aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
             <span class=\"navbar-toggler-icon\"></span>
@@ -276,19 +308,48 @@ class __TwigTemplate_b51745ae8f25d2275dbd31eda56706731861b6831c2f9f6970159c2146a
         <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">
             <ul class=\"navbar-nav mr-auto\">
                 <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"{{path('produits')}}\">Accueil</a>
+                    <a class=\"nav-link\" href=\"/\">Accueil</a>
+                </li>
+
+
+                <li class=\"nav-item dropdown\">
+
+                    <a href=\"\" class=\"nav-link dropdown-toggle\" id=\"navbarDropdown\" role=\"button\"
+                        data-toggle=\"dropdown\">Produits</a>
+                    <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
+
+
+                        <a class=\"nav-link\" href=\"{{path('produits')}}\">Produits</a>
+                        <div class=\"dropdown-divider\"></div>
+                        <a class=\"nav-link\" href=\"{{path('admin_produits')}}\">Administration</a>
+
+
+                    </div>
+                </li>
+
+                <li class=\"nav-item dropdown\">
+
+                    <a href=\"#\" class=\"nav-link dropdown-toggle\" id=\"navbarDropdown\" role=\"button\"
+                        data-toggle=\"dropdown\">Marques</a>
+                    <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
+
+
+                        <a class=\"nav-link\" href=\"{{path('categories')}}\">Marques</a>
+                        <div class=\"dropdown-divider\"></div>
+                        <a class=\"nav-link\" href=\"{{path('admin_categories')}}\">Administration</a>
+
+
+                    </div>
+                </li>
+
+                <li class=\"nav-item\">
+                    <a class=\"nav-link\" href=\"{{path('inscription')}}\">Inscription</a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"{{path('produits')}}\">Produits</a>
+                    <a class=\"nav-link\" href=\"{{path('connexion')}}\">Connexion</a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"{{path('admin_produits')}}\">Administration</a>
-                </li>
-                <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"{{path('categories')}}\">Marques</a>
-                </li>
-                <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"{{path('admin_categories')}}\">Administration</a>
+                    <a class=\"nav-link\" href=\"{{path('deconnexion')}}\">Déconnexion</a>
                 </li>
         </div>
     </nav>

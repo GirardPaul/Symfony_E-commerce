@@ -17,7 +17,11 @@ return [
         '/admin/categories/creation' => [[['_route' => 'creation_categories', '_controller' => 'App\\Controller\\AdminCategoriesController::modification'], null, null, null, false, false, null]],
         '/admin/produits' => [[['_route' => 'admin_produits', '_controller' => 'App\\Controller\\AdminController::index'], null, null, null, false, false, null]],
         '/admin/produits/creation' => [[['_route' => 'creation_produits', '_controller' => 'App\\Controller\\AdminController::modification'], null, null, null, false, false, null]],
+        '/inscription' => [[['_route' => 'inscription', '_controller' => 'App\\Controller\\AdminSecuController::index'], null, null, null, false, false, null]],
+        '/login' => [[['_route' => 'connexion', '_controller' => 'App\\Controller\\AdminSecuController::login'], null, null, null, false, false, null]],
+        '/logout' => [[['_route' => 'deconnexion', '_controller' => 'App\\Controller\\AdminSecuController::deconnexion'], null, null, null, false, false, null]],
         '/categories' => [[['_route' => 'categories', '_controller' => 'App\\Controller\\CategoriesController::index'], null, null, null, false, false, null]],
+        '/' => [[['_route' => 'accueil', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
         '/client/produits' => [[['_route' => 'produits', '_controller' => 'App\\Controller\\ProduitsController::index'], null, null, null, false, false, null]],
     ],
     [ // $regexpList

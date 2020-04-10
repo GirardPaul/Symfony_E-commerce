@@ -23,6 +23,10 @@ return [
     'creation_produits' => [[], ['_controller' => 'App\\Controller\\AdminController::modification'], [], [['text', '/admin/produits/creation']], [], []],
     'modif_produits' => [['id'], ['_controller' => 'App\\Controller\\AdminController::modification'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/admin/produits']], [], []],
     'supp_produits' => [['id'], ['_controller' => 'App\\Controller\\AdminController::suppression'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/admin/produits']], [], []],
+    'inscription' => [[], ['_controller' => 'App\\Controller\\AdminSecuController::index'], [], [['text', '/inscription']], [], []],
+    'connexion' => [[], ['_controller' => 'App\\Controller\\AdminSecuController::login'], [], [['text', '/login']], [], []],
+    'deconnexion' => [[], ['_controller' => 'App\\Controller\\AdminSecuController::deconnexion'], [], [['text', '/logout']], [], []],
     'categories' => [[], ['_controller' => 'App\\Controller\\CategoriesController::index'], [], [['text', '/categories']], [], []],
+    'accueil' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], []],
     'produits' => [[], ['_controller' => 'App\\Controller\\ProduitsController::index'], [], [['text', '/client/produits']], [], []],
 ];
