@@ -106,8 +106,24 @@ class __TwigTemplate_6012922d3deccd2777cd47d4d44f8032411fed839b1d38a258a34750693
 
         // line 8
         echo "
-<form action=\"";
+";
         // line 9
+        if ((isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 9, $this->source); })())) {
+            // line 10
+            echo "
+<div class=\"alert alert-danger\">
+    ";
+            // line 12
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 12, $this->source); })()), "messageKey", [], "any", false, false, false, 12), twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 12, $this->source); })()), "messagedata", [], "any", false, false, false, 12), "security"), "html", null, true);
+            echo "
+</div>
+
+";
+        }
+        // line 16
+        echo "
+<form action=\"";
+        // line 17
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("connexion");
         echo "\" method=\"post\">
 
@@ -146,7 +162,7 @@ class __TwigTemplate_6012922d3deccd2777cd47d4d44f8032411fed839b1d38a258a34750693
 
     public function getDebugInfo()
     {
-        return array (  111 => 9,  108 => 8,  98 => 7,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  127 => 17,  124 => 16,  117 => 12,  113 => 10,  111 => 9,  108 => 8,  98 => 7,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -158,6 +174,14 @@ class __TwigTemplate_6012922d3deccd2777cd47d4d44f8032411fed839b1d38a258a34750693
 {% block monTitre %}Connexion{% endblock %}
 
 {% block body %}
+
+{% if error %}
+
+<div class=\"alert alert-danger\">
+    {{error.messageKey | trans(error.messagedata, 'security')}}
+</div>
+
+{% endif %}
 
 <form action=\"{{path('connexion')}}\" method=\"post\">
 

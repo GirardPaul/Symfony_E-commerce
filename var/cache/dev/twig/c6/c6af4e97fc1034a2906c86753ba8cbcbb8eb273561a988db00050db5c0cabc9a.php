@@ -92,11 +92,17 @@ class __TwigTemplate_b51745ae8f25d2275dbd31eda56706731861b6831c2f9f6970159c2146a
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("produits");
         echo "\">Produits</a>
                         <div class=\"dropdown-divider\"></div>
-                        <a class=\"nav-link\" href=\"";
+                        ";
         // line 36
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_produits");
-        echo "\">Administration</a>
-
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+            // line 37
+            echo "                        <a class=\"nav-link\" href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_produits");
+            echo "\">Administration</a>
+                        ";
+        }
+        // line 39
+        echo "
 
                     </div>
                 </li>
@@ -109,55 +115,70 @@ class __TwigTemplate_b51745ae8f25d2275dbd31eda56706731861b6831c2f9f6970159c2146a
 
 
                         <a class=\"nav-link\" href=\"";
-        // line 49
+        // line 51
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("categories");
         echo "\">Marques</a>
                         <div class=\"dropdown-divider\"></div>
-                        <a class=\"nav-link\" href=\"";
-        // line 51
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_categories");
-        echo "\">Administration</a>
-
+                        ";
+        // line 53
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+            // line 54
+            echo "                        <a class=\"nav-link\" href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_categories");
+            echo "\">Administration</a>
+                        ";
+        }
+        // line 56
+        echo "
 
                     </div>
                 </li>
-
-                <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"";
-        // line 58
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("inscription");
-        echo "\">Inscription</a>
-                </li>
-                <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"";
-        // line 61
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("connexion");
-        echo "\">Connexion</a>
-                </li>
-                <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"";
-        // line 64
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("deconnexion");
-        echo "\">Déconnexion</a>
-                </li>
-        </div>
+                ";
+        // line 60
+        if ( !twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 60, $this->source); })()), "user", [], "any", false, false, false, 60)) {
+            // line 61
+            echo "                    <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"";
+            // line 62
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("inscription");
+            echo "\">Inscription</a>
+                    </li>
+                    <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"";
+            // line 65
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("connexion");
+            echo "\">Connexion</a>
+                    </li>
+                ";
+        } else {
+            // line 68
+            echo "                    <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"";
+            // line 69
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("deconnexion");
+            echo "\">Déconnexion</a>
+                    </li>
+                ";
+        }
+        // line 72
+        echo "        </div>
     </nav>
     <div class=\"container\">
 
         <h1 class=\"border border-dark rounded text white m-2 p-2 text-center bg-primary\">
             ";
-        // line 71
+        // line 77
         $this->displayBlock('monTitre', $context, $blocks);
         echo "</h1>
         ";
-        // line 72
+        // line 78
         $this->displayBlock('body', $context, $blocks);
-        // line 73
+        // line 79
         echo "    </div>
     ";
-        // line 74
+        // line 80
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 75
+        // line 81
         echo "    <script src=\"https://code.jquery.com/jquery-3.4.1.slim.min.js\"
         integrity=\"sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n\"
         crossorigin=\"anonymous\"></script>
@@ -215,7 +236,7 @@ class __TwigTemplate_b51745ae8f25d2275dbd31eda56706731861b6831c2f9f6970159c2146a
 
     }
 
-    // line 71
+    // line 77
     public function block_monTitre($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -233,7 +254,7 @@ class __TwigTemplate_b51745ae8f25d2275dbd31eda56706731861b6831c2f9f6970159c2146a
 
     }
 
-    // line 72
+    // line 78
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -251,7 +272,7 @@ class __TwigTemplate_b51745ae8f25d2275dbd31eda56706731861b6831c2f9f6970159c2146a
 
     }
 
-    // line 74
+    // line 80
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -281,7 +302,7 @@ class __TwigTemplate_b51745ae8f25d2275dbd31eda56706731861b6831c2f9f6970159c2146a
 
     public function getDebugInfo()
     {
-        return array (  255 => 74,  237 => 72,  219 => 71,  201 => 9,  182 => 6,  161 => 75,  159 => 74,  156 => 73,  154 => 72,  150 => 71,  140 => 64,  134 => 61,  128 => 58,  118 => 51,  113 => 49,  97 => 36,  92 => 34,  66 => 10,  64 => 9,  60 => 8,  55 => 6,  48 => 1,);
+        return array (  276 => 80,  258 => 78,  240 => 77,  222 => 9,  203 => 6,  182 => 81,  180 => 80,  177 => 79,  175 => 78,  171 => 77,  164 => 72,  158 => 69,  155 => 68,  149 => 65,  143 => 62,  140 => 61,  138 => 60,  132 => 56,  126 => 54,  124 => 53,  119 => 51,  105 => 39,  99 => 37,  97 => 36,  92 => 34,  66 => 10,  64 => 9,  60 => 8,  55 => 6,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -321,7 +342,9 @@ class __TwigTemplate_b51745ae8f25d2275dbd31eda56706731861b6831c2f9f6970159c2146a
 
                         <a class=\"nav-link\" href=\"{{path('produits')}}\">Produits</a>
                         <div class=\"dropdown-divider\"></div>
+                        {% if is_granted('ROLE_ADMIN') %}
                         <a class=\"nav-link\" href=\"{{path('admin_produits')}}\">Administration</a>
+                        {% endif %}
 
 
                     </div>
@@ -336,21 +359,25 @@ class __TwigTemplate_b51745ae8f25d2275dbd31eda56706731861b6831c2f9f6970159c2146a
 
                         <a class=\"nav-link\" href=\"{{path('categories')}}\">Marques</a>
                         <div class=\"dropdown-divider\"></div>
+                        {% if is_granted('ROLE_ADMIN') %}
                         <a class=\"nav-link\" href=\"{{path('admin_categories')}}\">Administration</a>
+                        {% endif %}
 
 
                     </div>
                 </li>
-
-                <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"{{path('inscription')}}\">Inscription</a>
-                </li>
-                <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"{{path('connexion')}}\">Connexion</a>
-                </li>
-                <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"{{path('deconnexion')}}\">Déconnexion</a>
-                </li>
+                {% if not app.user %}
+                    <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"{{path('inscription')}}\">Inscription</a>
+                    </li>
+                    <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"{{path('connexion')}}\">Connexion</a>
+                    </li>
+                {% else %}
+                    <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"{{path('deconnexion')}}\">Déconnexion</a>
+                    </li>
+                {% endif %}
         </div>
     </nav>
     <div class=\"container\">

@@ -33,7 +33,9 @@
 
                         <a class="nav-link" href="{{path('produits')}}">Produits</a>
                         <div class="dropdown-divider"></div>
+                        {% if is_granted('ROLE_ADMIN') %}
                         <a class="nav-link" href="{{path('admin_produits')}}">Administration</a>
+                        {% endif %}
 
 
                     </div>
@@ -48,21 +50,25 @@
 
                         <a class="nav-link" href="{{path('categories')}}">Marques</a>
                         <div class="dropdown-divider"></div>
+                        {% if is_granted('ROLE_ADMIN') %}
                         <a class="nav-link" href="{{path('admin_categories')}}">Administration</a>
+                        {% endif %}
 
 
                     </div>
                 </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="{{path('inscription')}}">Inscription</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{path('connexion')}}">Connexion</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{path('deconnexion')}}">Déconnexion</a>
-                </li>
+                {% if not app.user %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{path('inscription')}}">Inscription</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{path('connexion')}}">Connexion</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{path('deconnexion')}}">Déconnexion</a>
+                    </li>
+                {% endif %}
         </div>
     </nav>
     <div class="container">

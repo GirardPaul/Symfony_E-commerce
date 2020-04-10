@@ -9,6 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request as HttpFoundationRequest;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class AdminSecuController extends AbstractController
 {
@@ -38,9 +39,12 @@ class AdminSecuController extends AbstractController
     /**
      * @Route("/login", name="connexion")
      */
-    public function login()
+    public function login(AuthenticationUtils $util)
     {
-        return $this->render('admin_secu/login.html.twig');
+        return $this->render('admin_secu/login.html.twig', [
+            "lastUserName" => $util->getLastUsername(),
+            "error" => $util->getLastAuthenticationError()
+        ]);
     }
     /**
      * @Route("/logout", name="deconnexion")

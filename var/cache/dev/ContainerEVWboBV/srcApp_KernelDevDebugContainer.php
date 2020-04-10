@@ -1,6 +1,6 @@
 <?php
 
-namespace ContainerDszeJOS;
+namespace ContainerEVWboBV;
 
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -2190,6 +2190,58 @@ class srcApp_KernelDevDebugContainer extends Container
     }
 
     /**
+     * Gets the private '.service_locator.DAy4.e9' shared service.
+     *
+     * @return \Symfony\Component\DependencyInjection\ServiceLocator
+     */
+    protected function get_ServiceLocator_DAy4_E9Service()
+    {
+        return $this->privates['.service_locator.DAy4.e9'] = new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [
+            'App\\Controller\\AdminCategoriesController::index' => ['privates', '.service_locator.LppTwsE', 'get_ServiceLocator_LppTwsEService', false],
+            'App\\Controller\\AdminCategoriesController::modification' => ['privates', '.service_locator.6hXADnL', 'get_ServiceLocator_6hXADnLService', false],
+            'App\\Controller\\AdminCategoriesController::suppression' => ['privates', '.service_locator.6UFasnB', 'get_ServiceLocator_6UFasnBService', false],
+            'App\\Controller\\AdminController::index' => ['privates', '.service_locator.bbhwHxH', 'get_ServiceLocator_BbhwHxHService', false],
+            'App\\Controller\\AdminController::modification' => ['privates', '.service_locator.4aF1bYP', 'get_ServiceLocator_4aF1bYPService', false],
+            'App\\Controller\\AdminController::suppression' => ['privates', '.service_locator.SPCTU0D', 'get_ServiceLocator_SPCTU0DService', false],
+            'App\\Controller\\AdminSecuController::index' => ['privates', '.service_locator.KV7oe7T', 'get_ServiceLocator_KV7oe7TService', false],
+            'App\\Controller\\AdminSecuController::login' => ['privates', '.service_locator.L3BqksV', 'get_ServiceLocator_L3BqksVService', false],
+            'App\\Controller\\CategoriesController::index' => ['privates', '.service_locator.LppTwsE', 'get_ServiceLocator_LppTwsEService', false],
+            'App\\Controller\\ProduitsController::index' => ['privates', '.service_locator.bbhwHxH', 'get_ServiceLocator_BbhwHxHService', false],
+            'App\\Controller\\AdminCategoriesController:index' => ['privates', '.service_locator.LppTwsE', 'get_ServiceLocator_LppTwsEService', false],
+            'App\\Controller\\AdminCategoriesController:modification' => ['privates', '.service_locator.6hXADnL', 'get_ServiceLocator_6hXADnLService', false],
+            'App\\Controller\\AdminCategoriesController:suppression' => ['privates', '.service_locator.6UFasnB', 'get_ServiceLocator_6UFasnBService', false],
+            'App\\Controller\\AdminController:index' => ['privates', '.service_locator.bbhwHxH', 'get_ServiceLocator_BbhwHxHService', false],
+            'App\\Controller\\AdminController:modification' => ['privates', '.service_locator.4aF1bYP', 'get_ServiceLocator_4aF1bYPService', false],
+            'App\\Controller\\AdminController:suppression' => ['privates', '.service_locator.SPCTU0D', 'get_ServiceLocator_SPCTU0DService', false],
+            'App\\Controller\\AdminSecuController:index' => ['privates', '.service_locator.KV7oe7T', 'get_ServiceLocator_KV7oe7TService', false],
+            'App\\Controller\\AdminSecuController:login' => ['privates', '.service_locator.L3BqksV', 'get_ServiceLocator_L3BqksVService', false],
+            'App\\Controller\\CategoriesController:index' => ['privates', '.service_locator.LppTwsE', 'get_ServiceLocator_LppTwsEService', false],
+            'App\\Controller\\ProduitsController:index' => ['privates', '.service_locator.bbhwHxH', 'get_ServiceLocator_BbhwHxHService', false],
+        ], [
+            'App\\Controller\\AdminCategoriesController::index' => '?',
+            'App\\Controller\\AdminCategoriesController::modification' => '?',
+            'App\\Controller\\AdminCategoriesController::suppression' => '?',
+            'App\\Controller\\AdminController::index' => '?',
+            'App\\Controller\\AdminController::modification' => '?',
+            'App\\Controller\\AdminController::suppression' => '?',
+            'App\\Controller\\AdminSecuController::index' => '?',
+            'App\\Controller\\AdminSecuController::login' => '?',
+            'App\\Controller\\CategoriesController::index' => '?',
+            'App\\Controller\\ProduitsController::index' => '?',
+            'App\\Controller\\AdminCategoriesController:index' => '?',
+            'App\\Controller\\AdminCategoriesController:modification' => '?',
+            'App\\Controller\\AdminCategoriesController:suppression' => '?',
+            'App\\Controller\\AdminController:index' => '?',
+            'App\\Controller\\AdminController:modification' => '?',
+            'App\\Controller\\AdminController:suppression' => '?',
+            'App\\Controller\\AdminSecuController:index' => '?',
+            'App\\Controller\\AdminSecuController:login' => '?',
+            'App\\Controller\\CategoriesController:index' => '?',
+            'App\\Controller\\ProduitsController:index' => '?',
+        ]);
+    }
+
+    /**
      * Gets the private '.service_locator.KV7oe7T' shared service.
      *
      * @return \Symfony\Component\DependencyInjection\ServiceLocator
@@ -2202,6 +2254,20 @@ class srcApp_KernelDevDebugContainer extends Container
         ], [
             'encoder' => '?',
             'objectManager' => '?',
+        ]);
+    }
+
+    /**
+     * Gets the private '.service_locator.L3BqksV' shared service.
+     *
+     * @return \Symfony\Component\DependencyInjection\ServiceLocator
+     */
+    protected function get_ServiceLocator_L3BqksVService()
+    {
+        return $this->privates['.service_locator.L3BqksV'] = new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [
+            'util' => ['services', 'security.authentication_utils', 'getSecurity_AuthenticationUtilsService', false],
+        ], [
+            'util' => '?',
         ]);
     }
 
@@ -2248,54 +2314,6 @@ class srcApp_KernelDevDebugContainer extends Container
         ], [
             'paginatorInterface' => '?',
             'produitsRepository' => 'App\\Repository\\ProduitsRepository',
-        ]);
-    }
-
-    /**
-     * Gets the private '.service_locator.hW1m8iX' shared service.
-     *
-     * @return \Symfony\Component\DependencyInjection\ServiceLocator
-     */
-    protected function get_ServiceLocator_HW1m8iXService()
-    {
-        return $this->privates['.service_locator.hW1m8iX'] = new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [
-            'App\\Controller\\AdminCategoriesController::index' => ['privates', '.service_locator.LppTwsE', 'get_ServiceLocator_LppTwsEService', false],
-            'App\\Controller\\AdminCategoriesController::modification' => ['privates', '.service_locator.6hXADnL', 'get_ServiceLocator_6hXADnLService', false],
-            'App\\Controller\\AdminCategoriesController::suppression' => ['privates', '.service_locator.6UFasnB', 'get_ServiceLocator_6UFasnBService', false],
-            'App\\Controller\\AdminController::index' => ['privates', '.service_locator.bbhwHxH', 'get_ServiceLocator_BbhwHxHService', false],
-            'App\\Controller\\AdminController::modification' => ['privates', '.service_locator.4aF1bYP', 'get_ServiceLocator_4aF1bYPService', false],
-            'App\\Controller\\AdminController::suppression' => ['privates', '.service_locator.SPCTU0D', 'get_ServiceLocator_SPCTU0DService', false],
-            'App\\Controller\\AdminSecuController::index' => ['privates', '.service_locator.KV7oe7T', 'get_ServiceLocator_KV7oe7TService', false],
-            'App\\Controller\\CategoriesController::index' => ['privates', '.service_locator.LppTwsE', 'get_ServiceLocator_LppTwsEService', false],
-            'App\\Controller\\ProduitsController::index' => ['privates', '.service_locator.bbhwHxH', 'get_ServiceLocator_BbhwHxHService', false],
-            'App\\Controller\\AdminCategoriesController:index' => ['privates', '.service_locator.LppTwsE', 'get_ServiceLocator_LppTwsEService', false],
-            'App\\Controller\\AdminCategoriesController:modification' => ['privates', '.service_locator.6hXADnL', 'get_ServiceLocator_6hXADnLService', false],
-            'App\\Controller\\AdminCategoriesController:suppression' => ['privates', '.service_locator.6UFasnB', 'get_ServiceLocator_6UFasnBService', false],
-            'App\\Controller\\AdminController:index' => ['privates', '.service_locator.bbhwHxH', 'get_ServiceLocator_BbhwHxHService', false],
-            'App\\Controller\\AdminController:modification' => ['privates', '.service_locator.4aF1bYP', 'get_ServiceLocator_4aF1bYPService', false],
-            'App\\Controller\\AdminController:suppression' => ['privates', '.service_locator.SPCTU0D', 'get_ServiceLocator_SPCTU0DService', false],
-            'App\\Controller\\AdminSecuController:index' => ['privates', '.service_locator.KV7oe7T', 'get_ServiceLocator_KV7oe7TService', false],
-            'App\\Controller\\CategoriesController:index' => ['privates', '.service_locator.LppTwsE', 'get_ServiceLocator_LppTwsEService', false],
-            'App\\Controller\\ProduitsController:index' => ['privates', '.service_locator.bbhwHxH', 'get_ServiceLocator_BbhwHxHService', false],
-        ], [
-            'App\\Controller\\AdminCategoriesController::index' => '?',
-            'App\\Controller\\AdminCategoriesController::modification' => '?',
-            'App\\Controller\\AdminCategoriesController::suppression' => '?',
-            'App\\Controller\\AdminController::index' => '?',
-            'App\\Controller\\AdminController::modification' => '?',
-            'App\\Controller\\AdminController::suppression' => '?',
-            'App\\Controller\\AdminSecuController::index' => '?',
-            'App\\Controller\\CategoriesController::index' => '?',
-            'App\\Controller\\ProduitsController::index' => '?',
-            'App\\Controller\\AdminCategoriesController:index' => '?',
-            'App\\Controller\\AdminCategoriesController:modification' => '?',
-            'App\\Controller\\AdminCategoriesController:suppression' => '?',
-            'App\\Controller\\AdminController:index' => '?',
-            'App\\Controller\\AdminController:modification' => '?',
-            'App\\Controller\\AdminController:suppression' => '?',
-            'App\\Controller\\AdminSecuController:index' => '?',
-            'App\\Controller\\CategoriesController:index' => '?',
-            'App\\Controller\\ProduitsController:index' => '?',
         ]);
     }
 
@@ -3171,7 +3189,7 @@ class srcApp_KernelDevDebugContainer extends Container
         include_once \dirname(__DIR__, 4).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/TraceableValueResolver.php';
         include_once \dirname(__DIR__, 4).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/NotTaggedControllerValueResolver.php';
 
-        return $this->privates['debug.argument_resolver.not_tagged_controller'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver(($this->privates['.service_locator.hW1m8iX'] ?? $this->get_ServiceLocator_HW1m8iXService())), ($this->privates['debug.stopwatch'] ?? ($this->privates['debug.stopwatch'] = new \Symfony\Component\Stopwatch\Stopwatch(true))));
+        return $this->privates['debug.argument_resolver.not_tagged_controller'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver(($this->privates['.service_locator.DAy4.e9'] ?? $this->get_ServiceLocator_DAy4_E9Service())), ($this->privates['debug.stopwatch'] ?? ($this->privates['debug.stopwatch'] = new \Symfony\Component\Stopwatch\Stopwatch(true))));
     }
 
     /**
@@ -3213,7 +3231,7 @@ class srcApp_KernelDevDebugContainer extends Container
         include_once \dirname(__DIR__, 4).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/TraceableValueResolver.php';
         include_once \dirname(__DIR__, 4).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/ServiceValueResolver.php';
 
-        return $this->privates['debug.argument_resolver.service'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver(($this->privates['.service_locator.hW1m8iX'] ?? $this->get_ServiceLocator_HW1m8iXService())), ($this->privates['debug.stopwatch'] ?? ($this->privates['debug.stopwatch'] = new \Symfony\Component\Stopwatch\Stopwatch(true))));
+        return $this->privates['debug.argument_resolver.service'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver(($this->privates['.service_locator.DAy4.e9'] ?? $this->get_ServiceLocator_DAy4_E9Service())), ($this->privates['debug.stopwatch'] ?? ($this->privates['debug.stopwatch'] = new \Symfony\Component\Stopwatch\Stopwatch(true))));
     }
 
     /**
@@ -5085,10 +5103,27 @@ class srcApp_KernelDevDebugContainer extends Container
         include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/Firewall/ListenerInterface.php';
         include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/Firewall/LegacyListenerTrait.php';
         include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/Firewall/AccessListener.php';
+
+        return $this->privates['security.access_listener'] = new \Symfony\Component\Security\Http\Firewall\AccessListener(($this->services['security.token_storage'] ?? $this->getSecurity_TokenStorageService()), ($this->privates['debug.security.access.decision_manager'] ?? $this->getDebug_Security_Access_DecisionManagerService()), ($this->privates['security.access_map'] ?? $this->getSecurity_AccessMapService()), ($this->privates['security.authentication.manager'] ?? $this->getSecurity_Authentication_ManagerService()));
+    }
+
+    /**
+     * Gets the private 'security.access_map' shared service.
+     *
+     * @return \Symfony\Component\Security\Http\AccessMap
+     */
+    protected function getSecurity_AccessMapService()
+    {
         include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/AccessMapInterface.php';
         include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/AccessMap.php';
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/http-foundation/RequestMatcherInterface.php';
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/http-foundation/RequestMatcher.php';
 
-        return $this->privates['security.access_listener'] = new \Symfony\Component\Security\Http\Firewall\AccessListener(($this->services['security.token_storage'] ?? $this->getSecurity_TokenStorageService()), ($this->privates['debug.security.access.decision_manager'] ?? $this->getDebug_Security_Access_DecisionManagerService()), ($this->privates['security.access_map'] ?? ($this->privates['security.access_map'] = new \Symfony\Component\Security\Http\AccessMap())), ($this->privates['security.authentication.manager'] ?? $this->getSecurity_Authentication_ManagerService()));
+        $this->privates['security.access_map'] = $instance = new \Symfony\Component\Security\Http\AccessMap();
+
+        $instance->add(new \Symfony\Component\HttpFoundation\RequestMatcher('^/admin'), [0 => 'ROLE_ADMIN'], NULL);
+
+        return $instance;
     }
 
     /**
@@ -5184,10 +5219,8 @@ class srcApp_KernelDevDebugContainer extends Container
         include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/Firewall/ChannelListener.php';
         include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/EntryPoint/AuthenticationEntryPointInterface.php';
         include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/EntryPoint/RetryAuthenticationEntryPoint.php';
-        include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/AccessMapInterface.php';
-        include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/AccessMap.php';
 
-        return $this->privates['security.channel_listener'] = new \Symfony\Component\Security\Http\Firewall\ChannelListener(($this->privates['security.access_map'] ?? ($this->privates['security.access_map'] = new \Symfony\Component\Security\Http\AccessMap())), new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), ($this->privates['monolog.logger.security'] ?? $this->getMonolog_Logger_SecurityService()));
+        return $this->privates['security.channel_listener'] = new \Symfony\Component\Security\Http\Firewall\ChannelListener(($this->privates['security.access_map'] ?? $this->getSecurity_AccessMapService()), new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), ($this->privates['monolog.logger.security'] ?? $this->getMonolog_Logger_SecurityService()));
     }
 
     /**
@@ -5311,7 +5344,7 @@ class srcApp_KernelDevDebugContainer extends Container
 
         $a = ($this->services['security.token_storage'] ?? $this->getSecurity_TokenStorageService());
         $b = ($this->privates['security.http_utils'] ?? $this->getSecurity_HttpUtilsService());
-        $c = new \Symfony\Component\Security\Http\Firewall\LogoutListener($a, $b, new \Symfony\Component\Security\Http\Logout\DefaultLogoutSuccessHandler($b, 'home'), ['csrf_parameter' => '_csrf_token', 'csrf_token_id' => 'logout', 'logout_path' => 'deconnexion']);
+        $c = new \Symfony\Component\Security\Http\Firewall\LogoutListener($a, $b, new \Symfony\Component\Security\Http\Logout\DefaultLogoutSuccessHandler($b, 'accueil'), ['csrf_parameter' => '_csrf_token', 'csrf_token_id' => 'logout', 'logout_path' => 'deconnexion']);
         $c->addHandler(new \Symfony\Component\Security\Http\Logout\CsrfTokenClearingLogoutHandler(($this->privates['security.csrf.token_storage'] ?? $this->getSecurity_Csrf_TokenStorageService())));
         $c->addHandler(new \Symfony\Component\Security\Http\Logout\SessionLogoutHandler());
 
