@@ -158,38 +158,44 @@ class __TwigTemplate_b51745ae8f25d2275dbd31eda56706731861b6831c2f9f6970159c2146a
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("deconnexion");
             echo "\">Déconnexion</a>
                     </li>
+                    <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"";
+            // line 72
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("espace_client");
+            echo "\">Espace Client</a>
+                    </li>
                 ";
         }
-        // line 72
+        // line 75
         echo "
                 ";
-        // line 73
+        // line 76
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 74
+            // line 77
             echo "                        <a class=\"nav-link\" href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("espace_admin");
             echo "\">Espace Admin</a>
                 ";
         }
-        // line 76
+        // line 79
         echo "        </div>
     </nav>
     <div class=\"container\">
 
         <h1 class=\"border border-dark rounded text white m-2 p-2 text-center bg-primary\">
             ";
-        // line 81
+        // line 84
         $this->displayBlock('monTitre', $context, $blocks);
         echo "</h1>
         ";
-        // line 82
+        // line 85
         $this->displayBlock('body', $context, $blocks);
-        // line 83
+        // line 86
         echo "    </div>
     ";
-        // line 84
+        // line 87
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 85
+        // line 88
         echo "    <script src=\"https://code.jquery.com/jquery-3.4.1.slim.min.js\"
         integrity=\"sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n\"
         crossorigin=\"anonymous\"></script>
@@ -247,7 +253,7 @@ class __TwigTemplate_b51745ae8f25d2275dbd31eda56706731861b6831c2f9f6970159c2146a
 
     }
 
-    // line 81
+    // line 84
     public function block_monTitre($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -265,7 +271,7 @@ class __TwigTemplate_b51745ae8f25d2275dbd31eda56706731861b6831c2f9f6970159c2146a
 
     }
 
-    // line 82
+    // line 85
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -283,7 +289,7 @@ class __TwigTemplate_b51745ae8f25d2275dbd31eda56706731861b6831c2f9f6970159c2146a
 
     }
 
-    // line 84
+    // line 87
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -313,7 +319,7 @@ class __TwigTemplate_b51745ae8f25d2275dbd31eda56706731861b6831c2f9f6970159c2146a
 
     public function getDebugInfo()
     {
-        return array (  287 => 84,  269 => 82,  251 => 81,  233 => 9,  214 => 6,  193 => 85,  191 => 84,  188 => 83,  186 => 82,  182 => 81,  175 => 76,  169 => 74,  167 => 73,  164 => 72,  158 => 69,  155 => 68,  149 => 65,  143 => 62,  140 => 61,  138 => 60,  132 => 56,  126 => 54,  124 => 53,  119 => 51,  105 => 39,  99 => 37,  97 => 36,  92 => 34,  66 => 10,  64 => 9,  60 => 8,  55 => 6,  48 => 1,);
+        return array (  293 => 87,  275 => 85,  257 => 84,  239 => 9,  220 => 6,  199 => 88,  197 => 87,  194 => 86,  192 => 85,  188 => 84,  181 => 79,  175 => 77,  173 => 76,  170 => 75,  164 => 72,  158 => 69,  155 => 68,  149 => 65,  143 => 62,  140 => 61,  138 => 60,  132 => 56,  126 => 54,  124 => 53,  119 => 51,  105 => 39,  99 => 37,  97 => 36,  92 => 34,  66 => 10,  64 => 9,  60 => 8,  55 => 6,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -387,6 +393,9 @@ class __TwigTemplate_b51745ae8f25d2275dbd31eda56706731861b6831c2f9f6970159c2146a
                 {% else %}
                     <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"{{path('deconnexion')}}\">Déconnexion</a>
+                    </li>
+                    <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"{{path('espace_client')}}\">Espace Client</a>
                     </li>
                 {% endif %}
 

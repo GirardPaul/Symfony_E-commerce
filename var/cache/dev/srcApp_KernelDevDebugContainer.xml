@@ -5633,6 +5633,13 @@
         <argument key="utilisateur" type="service" id=".errored..service_locator.XUgpMgm.App\Entity\Utilisateur"/>
       </argument>
     </service>
+    <service id=".service_locator.IVLAgNV" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="encoder" type="service" id="security.user_password_encoder.generic"/>
+        <argument key="objectManager" type="service" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
     <service id=".service_locator.KV7oe7T" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5646,7 +5653,7 @@
         <argument key="util" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.EjjhawK" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.Bb.EhAE" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AdminCategoriesController::index" type="service" id=".service_locator.LppTwsE"/>
@@ -5655,7 +5662,9 @@
         <argument key="App\Controller\AdminController::espaceAdmin" type="service" id=".service_locator.ZahoQIa"/>
         <argument key="App\Controller\AdminController::index" type="service" id=".service_locator.bbhwHxH"/>
         <argument key="App\Controller\AdminController::modification" type="service" id=".service_locator.4aF1bYP"/>
+        <argument key="App\Controller\AdminController::modificationClient" type="service" id=".service_locator.IVLAgNV"/>
         <argument key="App\Controller\AdminController::suppression" type="service" id=".service_locator.SPCTU0D"/>
+        <argument key="App\Controller\AdminController::suppressionClient" type="service" id=".service_locator.XUgpMgm"/>
         <argument key="App\Controller\AdminController::suppressionUtilisateur" type="service" id=".service_locator.XUgpMgm"/>
         <argument key="App\Controller\AdminSecuController::index" type="service" id=".service_locator.KV7oe7T"/>
         <argument key="App\Controller\AdminSecuController::login" type="service" id=".service_locator.L3BqksV"/>
@@ -5667,7 +5676,9 @@
         <argument key="App\Controller\AdminController:espaceAdmin" type="service" id=".service_locator.ZahoQIa"/>
         <argument key="App\Controller\AdminController:index" type="service" id=".service_locator.bbhwHxH"/>
         <argument key="App\Controller\AdminController:modification" type="service" id=".service_locator.4aF1bYP"/>
+        <argument key="App\Controller\AdminController:modificationClient" type="service" id=".service_locator.IVLAgNV"/>
         <argument key="App\Controller\AdminController:suppression" type="service" id=".service_locator.SPCTU0D"/>
+        <argument key="App\Controller\AdminController:suppressionClient" type="service" id=".service_locator.XUgpMgm"/>
         <argument key="App\Controller\AdminController:suppressionUtilisateur" type="service" id=".service_locator.XUgpMgm"/>
         <argument key="App\Controller\AdminSecuController:index" type="service" id=".service_locator.KV7oe7T"/>
         <argument key="App\Controller\AdminSecuController:login" type="service" id=".service_locator.L3BqksV"/>
@@ -6132,12 +6143,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.EjjhawK"/>
+      <argument type="service" id=".service_locator.Bb.EhAE"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.EjjhawK"/>
+      <argument type="service" id=".service_locator.Bb.EhAE"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -6546,7 +6557,7 @@
     <service id="Vich\UploaderBundle\Form\Type\VichImageType" alias="vich_uploader.form.type.image" public="false"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.EjjhawK"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.Bb.EhAE"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

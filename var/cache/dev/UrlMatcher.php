@@ -18,6 +18,7 @@ return [
         '/admin/produits' => [[['_route' => 'admin_produits', '_controller' => 'App\\Controller\\AdminController::index'], null, null, null, false, false, null]],
         '/admin/produits/creation' => [[['_route' => 'creation_produits', '_controller' => 'App\\Controller\\AdminController::modification'], null, null, null, false, false, null]],
         '/admin/utilisateurs' => [[['_route' => 'espace_admin', '_controller' => 'App\\Controller\\AdminController::espaceAdmin'], null, null, null, false, false, null]],
+        '/client/espace' => [[['_route' => 'espace_client', '_controller' => 'App\\Controller\\AdminController::espaceClient'], null, null, null, false, false, null]],
         '/inscription' => [[['_route' => 'inscription', '_controller' => 'App\\Controller\\AdminSecuController::index'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'connexion', '_controller' => 'App\\Controller\\AdminSecuController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'deconnexion', '_controller' => 'App\\Controller\\AdminSecuController::deconnexion'], null, null, null, false, false, null]],
@@ -51,6 +52,10 @@ return [
                     .')'
                     .'|utilisateurs/([^/]++)(*:260)'
                 .')'
+                .'|/client/espace/(?'
+                    .'|modification/([^/]++)(*:308)'
+                    .'|suppression/([^/]++)(*:336)'
+                .')'
             .')/?$}sD',
     ],
     [ // $dynamicRoutes
@@ -69,8 +74,10 @@ return [
             [['_route' => 'modif_produits', '_controller' => 'App\\Controller\\AdminController::modification'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null],
             [['_route' => 'supp_produits', '_controller' => 'App\\Controller\\AdminController::suppression'], ['id'], ['SUP' => 0], null, false, true, null],
         ],
-        260 => [
-            [['_route' => 'supp_utilisateur', '_controller' => 'App\\Controller\\AdminController::suppressionUtilisateur'], ['id'], ['SUP' => 0], null, false, true, null],
+        260 => [[['_route' => 'supp_utilisateur', '_controller' => 'App\\Controller\\AdminController::suppressionUtilisateur'], ['id'], ['SUP' => 0], null, false, true, null]],
+        308 => [[['_route' => 'modif_client', '_controller' => 'App\\Controller\\AdminController::modificationClient'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        336 => [
+            [['_route' => 'supp_client', '_controller' => 'App\\Controller\\AdminController::suppressionClient'], ['id'], ['SUP' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],
