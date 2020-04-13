@@ -40,13 +40,11 @@ class Produits
     public function setImageFile(?File $imageFile = null): self
     {
         $this->imageFile = $imageFile;
+        
+        if($this->imageFile instanceof UploadedFile){
+            $this->updated_at = new \DateTime('now');
+        }
         return $this;
-
-        // if (null !== $imageFile) {
-        //     // It is required that at least one field changes if you are using doctrine
-        //     // otherwise the event listeners won't be called and the file is lost
-        //     $this->updatedAt = new \DateTimeImmutable();
-        // }
     }
 
     public function getImageFile(): ?File
@@ -74,6 +72,11 @@ class Produits
      * @ORM\Column(type="string", length=255)
      */
     private $etat;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $updated_at;
 
     public function getId(): ?int
     {
@@ -148,6 +151,18 @@ class Produits
     public function setEtat(string $etat): self
     {
         $this->etat = $etat;
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updated_at;
+    }
+
+    public function setUpdatedAt(\DateTimeInterface $updated_at): self
+    {
+        $this->updated_at = $updated_at;
 
         return $this;
     }

@@ -36,7 +36,8 @@
         <div class="card mb-3">
             <div class="row no-gutters align-items-center p-2">
                 <div class="col-12 col-md-4">
-                    <img class="card-img" style="width: 180px; height: 220px;" src="{{asset('produits/' ~ produit.image)}}">
+                    <img class="card-img" style="width: 180px; height: 220px;"
+                        src="{{asset('produits/' ~ produit.image)}}">
                 </div>
                 <div class="col">
                     <div class="card-body">
@@ -48,21 +49,44 @@
                             <div><strong>Prix :</strong> {{produit.prix}}€</div>
                             <div><strong>Grade :</strong> {{produit.etat}}</div>
 
+                            {% if admin %}
+                            
+                            <a href="{{path('admin_produit',{'id' : produit.id})}}"><span class="badge badge-success">Voir plus <svg class="bi bi-caret-right-fill" width="1em"
+                                height="1em" viewBox="0 0 16 16" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 011.659-.753l5.48 4.796a1 1 0 010 1.506z" />
+                            </svg>
+                        </span></a>
+
+                        {% else %}
+                            
+                        <a href="{{path('produit',{'id' : produit.id})}}"><span class="badge badge-success">Voir plus <svg class="bi bi-caret-right-fill" width="1em"
+                            height="1em" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                            d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 011.659-.753l5.48 4.796a1 1 0 010 1.506z" />
+                        </svg>
+                    </span></a>
+                        
+                        {% endif %}
                         </p>
 
                     </div>
                 </div>
             </div>
+            <a href="" class="col btn btn-primary w-100">Ajouter au Panier<i class="ml-2 fas fa-cart-plus"></i></a>
             {% if admin %}
             <div class="row no-gutters">
                 <a href="{{path('modif_produits',{'id' : produit.id})}}" class="col btn btn-warning">Modifier</a>
-                <form action="{{path('supp_produits', {'id' : produit.id})}}" class="col" method="post" onsubmit="return confirm('Voulez vous vraiment supprimer ce produit ?')">
+                <form action="{{path('supp_produits', {'id' : produit.id})}}" class="col" method="post"
+                    onsubmit="return confirm('Voulez vous vraiment supprimer ce produit ?')">
                     <input type="hidden" name="_method" value="SUP">
                     <input type="hidden" name="_token" value="{{csrf_token('SUP' ~ produit.id)}}">
                     <input type="submit" value="Supprimer" class="btn btn-danger w-100">
                 </form>
             </div>
-            
+
             {% endif %}
 
         </div>

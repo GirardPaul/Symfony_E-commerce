@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Produits;
 use App\Entity\RechercheProduits;
 use App\Form\RechercheProduitsType;
 use App\Repository\ProduitsRepository;
@@ -37,5 +38,17 @@ class ProduitsController extends AbstractController
             "form" => $form->createView(),
             "admin" => false
         ]);
+    }
+     /**
+     * @Route("/client/produit/{id}", name="produit")
+     */
+    public function produit(Produits $produit)
+    {
+
+        return $this->render('produits/produit.html.twig', [
+            "produit" => $produit,
+            "admin" => false
+        ]);
+
     }
 }

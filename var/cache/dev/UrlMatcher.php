@@ -47,14 +47,20 @@ return [
                     .'|categories/([^/]++)(?'
                         .'|(*:201)'
                     .')'
-                    .'|produits/([^/]++)(?'
-                        .'|(*:230)'
+                    .'|produit(?'
+                        .'|/([^/]++)(*:229)'
+                        .'|s/([^/]++)(?'
+                            .'|(*:250)'
+                        .')'
                     .')'
-                    .'|utilisateurs/([^/]++)(*:260)'
+                    .'|utilisateurs/([^/]++)(*:281)'
                 .')'
-                .'|/client/espace/(?'
-                    .'|modification/([^/]++)(*:308)'
-                    .'|suppression/([^/]++)(*:336)'
+                .'|/client/(?'
+                    .'|espace/(?'
+                        .'|modification/([^/]++)(*:332)'
+                        .'|suppression/([^/]++)(*:360)'
+                    .')'
+                    .'|produit/([^/]++)(*:385)'
                 .')'
             .')/?$}sD',
     ],
@@ -70,14 +76,16 @@ return [
             [['_route' => 'modif_categories', '_controller' => 'App\\Controller\\AdminCategoriesController::modification'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null],
             [['_route' => 'supp_categories', '_controller' => 'App\\Controller\\AdminCategoriesController::suppression'], ['id'], ['SUP' => 0], null, false, true, null],
         ],
-        230 => [
+        229 => [[['_route' => 'admin_produit', '_controller' => 'App\\Controller\\AdminController::produit'], ['id'], null, null, false, true, null]],
+        250 => [
             [['_route' => 'modif_produits', '_controller' => 'App\\Controller\\AdminController::modification'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null],
             [['_route' => 'supp_produits', '_controller' => 'App\\Controller\\AdminController::suppression'], ['id'], ['SUP' => 0], null, false, true, null],
         ],
-        260 => [[['_route' => 'supp_utilisateur', '_controller' => 'App\\Controller\\AdminController::suppressionUtilisateur'], ['id'], ['SUP' => 0], null, false, true, null]],
-        308 => [[['_route' => 'modif_client', '_controller' => 'App\\Controller\\AdminController::modificationClient'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        336 => [
-            [['_route' => 'supp_client', '_controller' => 'App\\Controller\\AdminController::suppressionClient'], ['id'], ['SUP' => 0], null, false, true, null],
+        281 => [[['_route' => 'supp_utilisateur', '_controller' => 'App\\Controller\\AdminController::suppressionUtilisateur'], ['id'], ['SUP' => 0], null, false, true, null]],
+        332 => [[['_route' => 'modif_client', '_controller' => 'App\\Controller\\AdminController::modificationClient'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        360 => [[['_route' => 'supp_client', '_controller' => 'App\\Controller\\AdminController::suppressionClient'], ['id'], ['SUP' => 0], null, false, true, null]],
+        385 => [
+            [['_route' => 'produit', '_controller' => 'App\\Controller\\ProduitsController::produit'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

@@ -20,6 +20,7 @@ return [
     'modif_categories' => [['id'], ['_controller' => 'App\\Controller\\AdminCategoriesController::modification'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/admin/categories']], [], []],
     'supp_categories' => [['id'], ['_controller' => 'App\\Controller\\AdminCategoriesController::suppression'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/admin/categories']], [], []],
     'admin_produits' => [[], ['_controller' => 'App\\Controller\\AdminController::index'], [], [['text', '/admin/produits']], [], []],
+    'admin_produit' => [['id'], ['_controller' => 'App\\Controller\\AdminController::produit'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/admin/produit']], [], []],
     'creation_produits' => [[], ['_controller' => 'App\\Controller\\AdminController::modification'], [], [['text', '/admin/produits/creation']], [], []],
     'modif_produits' => [['id'], ['_controller' => 'App\\Controller\\AdminController::modification'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/admin/produits']], [], []],
     'supp_produits' => [['id'], ['_controller' => 'App\\Controller\\AdminController::suppression'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/admin/produits']], [], []],
@@ -34,4 +35,5 @@ return [
     'categories' => [[], ['_controller' => 'App\\Controller\\CategoriesController::index'], [], [['text', '/categories']], [], []],
     'accueil' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], []],
     'produits' => [[], ['_controller' => 'App\\Controller\\ProduitsController::index'], [], [['text', '/client/produits']], [], []],
+    'produit' => [['id'], ['_controller' => 'App\\Controller\\ProduitsController::produit'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/client/produit']], [], []],
 ];
