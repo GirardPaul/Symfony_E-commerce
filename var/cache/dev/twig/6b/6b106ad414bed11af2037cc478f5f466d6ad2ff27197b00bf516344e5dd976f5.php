@@ -182,14 +182,19 @@ class __TwigTemplate_df970b17a37cb95ab47c71b4e945b83c2052287d93cf96276242e38978f
             // line 47
             echo twig_escape_filter($this->env, (isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 47, $this->source); })()), "html", null, true);
             echo "€</td>
-            <td></td>
+            <td>            
+                <a href=\"";
+            // line 49
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("commande");
+            echo "\" class=\"btn btn-primary btn-sm\">Commander</a>
+            </td>
         </tr>
     </tfoot>
 </table>
 
 ";
         } else {
-            // line 54
+            // line 56
             echo "    
 
 <p>Le panier est vide</p>
@@ -198,7 +203,7 @@ class __TwigTemplate_df970b17a37cb95ab47c71b4e945b83c2052287d93cf96276242e38978f
 
 ";
         }
-        // line 61
+        // line 63
         echo "
 ";
         
@@ -221,7 +226,7 @@ class __TwigTemplate_df970b17a37cb95ab47c71b4e945b83c2052287d93cf96276242e38978f
 
     public function getDebugInfo()
     {
-        return array (  202 => 61,  193 => 54,  183 => 47,  177 => 43,  164 => 36,  159 => 34,  155 => 33,  151 => 32,  147 => 31,  143 => 30,  139 => 29,  135 => 27,  131 => 26,  113 => 10,  111 => 9,  108 => 8,  98 => 7,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  207 => 63,  198 => 56,  188 => 49,  183 => 47,  177 => 43,  164 => 36,  159 => 34,  155 => 33,  151 => 32,  147 => 31,  143 => 30,  139 => 29,  135 => 27,  131 => 26,  113 => 10,  111 => 9,  108 => 8,  98 => 7,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -273,7 +278,9 @@ class __TwigTemplate_df970b17a37cb95ab47c71b4e945b83c2052287d93cf96276242e38978f
         <tr>
             <td colspan=\"5\" class=\"text-right\">Total : </td>
             <td>{{total}}€</td>
-            <td></td>
+            <td>            
+                <a href=\"{{path('commande')}}\" class=\"btn btn-primary btn-sm\">Commander</a>
+            </td>
         </tr>
     </tfoot>
 </table>

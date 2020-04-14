@@ -25,6 +25,9 @@ return [
         '/categories' => [[['_route' => 'categories', '_controller' => 'App\\Controller\\CategoriesController::index'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'accueil', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
         '/client/panier' => [[['_route' => 'panier', '_controller' => 'App\\Controller\\PanierController::index'], null, null, null, false, false, null]],
+        '/client/panier/commande' => [[['_route' => 'commande', '_controller' => 'App\\Controller\\PanierController::commande'], null, null, null, false, false, null]],
+        '/admin/espace/commandes' => [[['_route' => 'commandes_client', '_controller' => 'App\\Controller\\PanierController::commandesClient'], null, null, null, false, false, null]],
+        '/client/espace/commande' => [[['_route' => 'commande_client', '_controller' => 'App\\Controller\\PanierController::commandeClient'], null, null, null, false, false, null]],
         '/client/produits' => [[['_route' => 'produits', '_controller' => 'App\\Controller\\ProduitsController::index'], null, null, null, false, false, null]],
     ],
     [ // $regexpList

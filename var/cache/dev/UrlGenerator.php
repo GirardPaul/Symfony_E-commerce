@@ -37,6 +37,9 @@ return [
     'panier' => [[], ['_controller' => 'App\\Controller\\PanierController::index'], [], [['text', '/client/panier']], [], []],
     'add_products' => [['id'], ['_controller' => 'App\\Controller\\PanierController::add'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/client/panier/add']], [], []],
     'remove_products' => [['id'], ['_controller' => 'App\\Controller\\PanierController::remove'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/client/panier/remove']], [], []],
+    'commande' => [[], ['_controller' => 'App\\Controller\\PanierController::commande'], [], [['text', '/client/panier/commande']], [], []],
+    'commandes_client' => [[], ['_controller' => 'App\\Controller\\PanierController::commandesClient'], [], [['text', '/admin/espace/commandes']], [], []],
+    'commande_client' => [[], ['_controller' => 'App\\Controller\\PanierController::commandeClient'], [], [['text', '/client/espace/commande']], [], []],
     'produits' => [[], ['_controller' => 'App\\Controller\\ProduitsController::index'], [], [['text', '/client/produits']], [], []],
     'produit' => [['id'], ['_controller' => 'App\\Controller\\ProduitsController::produit'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/client/produit']], [], []],
 ];

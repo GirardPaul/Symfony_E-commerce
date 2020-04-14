@@ -6,7 +6,7 @@
 use Symfony\Component\DependencyInjection\Dumper\Preloader;
 
 require dirname(__DIR__, 3).'/vendor/autoload.php';
-require __DIR__.'/ContainerE6xJXxw/srcApp_KernelDevDebugContainer.php';
+require __DIR__.'/ContainerHNeM2Kr/srcApp_KernelDevDebugContainer.php';
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -43,6 +43,8 @@ $classes[] = 'App\Form\InscriptionType';
 $classes[] = 'App\Form\ProduitsType';
 $classes[] = 'App\Form\RechercheProduitsType';
 $classes[] = 'App\Repository\CategoriesRepository';
+$classes[] = 'App\Repository\OrderDetailRepository';
+$classes[] = 'App\Repository\OrderRepository';
 $classes[] = 'App\Repository\ProduitsRepository';
 $classes[] = 'App\Repository\UtilisateurRepository';
 $classes[] = 'Symfony\Bundle\FrameworkBundle\Controller\RedirectController';

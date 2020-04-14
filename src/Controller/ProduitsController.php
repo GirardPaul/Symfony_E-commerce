@@ -26,8 +26,6 @@ class ProduitsController extends AbstractController
         $form->handleRequest($request);
 
 
-
-
         $produits = $paginatorInterface->paginate(
             $produitsRepository->findAllWithPagination($rechercheProduits), /* query NOT result */
             $request->query->getInt('page', 1), /*page number*/

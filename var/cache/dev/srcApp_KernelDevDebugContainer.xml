@@ -441,6 +441,14 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Repository\OrderDetailRepository" class="App\Repository\OrderDetailRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\OrderRepository" class="App\Repository\OrderRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\ProduitsRepository" class="App\Repository\ProduitsRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -3697,7 +3705,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator.vmXbHOM"/>
+      <argument type="service" id=".service_locator.KI4KRC9"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5383,6 +5391,10 @@
     <service id=".abstract.instanceof.App\Form\RechercheProduitsType" class="App\Form\RechercheProduitsType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CategoriesRepository" class="App\Repository\CategoriesRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\CategoriesRepository" class="App\Repository\CategoriesRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\OrderDetailRepository" class="App\Repository\OrderDetailRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\OrderDetailRepository" class="App\Repository\OrderDetailRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\OrderRepository" class="App\Repository\OrderRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\OrderRepository" class="App\Repository\OrderRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ProduitsRepository" class="App\Repository\ProduitsRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ProduitsRepository" class="App\Repository\ProduitsRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UtilisateurRepository" class="App\Repository\UtilisateurRepository" autowire="true" abstract="true"/>
@@ -5688,7 +5700,19 @@
         <argument key="session" type="service" id="session"/>
       </argument>
     </service>
-    <service id=".service_locator.ibkqizC" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.5y3MckO" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="orderRepository" type="service" id="App\Repository\OrderRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.dUSCBoT" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="orderDetailRepository" type="service" id="App\Repository\OrderDetailRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.6oeiRFl" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AdminCategoriesController::index" type="service" id=".service_locator.LppTwsE"/>
@@ -5706,6 +5730,9 @@
         <argument key="App\Controller\AdminSecuController::login" type="service" id=".service_locator.L3BqksV"/>
         <argument key="App\Controller\CategoriesController::index" type="service" id=".service_locator.LppTwsE"/>
         <argument key="App\Controller\PanierController::add" type="service" id=".service_locator.o3htLhs"/>
+        <argument key="App\Controller\PanierController::commande" type="service" id=".service_locator.74wFqaN"/>
+        <argument key="App\Controller\PanierController::commandeClient" type="service" id=".service_locator.dUSCBoT"/>
+        <argument key="App\Controller\PanierController::commandesClient" type="service" id=".service_locator.5y3MckO"/>
         <argument key="App\Controller\PanierController::index" type="service" id=".service_locator.74wFqaN"/>
         <argument key="App\Controller\PanierController::remove" type="service" id=".service_locator.o3htLhs"/>
         <argument key="App\Controller\ProduitsController::index" type="service" id=".service_locator.bbhwHxH"/>
@@ -5725,6 +5752,9 @@
         <argument key="App\Controller\AdminSecuController:login" type="service" id=".service_locator.L3BqksV"/>
         <argument key="App\Controller\CategoriesController:index" type="service" id=".service_locator.LppTwsE"/>
         <argument key="App\Controller\PanierController:add" type="service" id=".service_locator.o3htLhs"/>
+        <argument key="App\Controller\PanierController:commande" type="service" id=".service_locator.74wFqaN"/>
+        <argument key="App\Controller\PanierController:commandeClient" type="service" id=".service_locator.dUSCBoT"/>
+        <argument key="App\Controller\PanierController:commandesClient" type="service" id=".service_locator.5y3MckO"/>
         <argument key="App\Controller\PanierController:index" type="service" id=".service_locator.74wFqaN"/>
         <argument key="App\Controller\PanierController:remove" type="service" id=".service_locator.o3htLhs"/>
         <argument key="App\Controller\ProduitsController:index" type="service" id=".service_locator.bbhwHxH"/>
@@ -5816,10 +5846,12 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
-    <service id=".service_locator.vmXbHOM" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.KI4KRC9" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\CategoriesRepository" type="service" id="App\Repository\CategoriesRepository"/>
+        <argument key="App\Repository\OrderDetailRepository" type="service" id="App\Repository\OrderDetailRepository"/>
+        <argument key="App\Repository\OrderRepository" type="service" id="App\Repository\OrderRepository"/>
         <argument key="App\Repository\ProduitsRepository" type="service" id="App\Repository\ProduitsRepository"/>
         <argument key="App\Repository\UtilisateurRepository" type="service" id="App\Repository\UtilisateurRepository"/>
       </argument>
@@ -6194,12 +6226,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.ibkqizC"/>
+      <argument type="service" id=".service_locator.6oeiRFl"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.ibkqizC"/>
+      <argument type="service" id=".service_locator.6oeiRFl"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -6609,7 +6641,7 @@
     <service id="Vich\UploaderBundle\Form\Type\VichImageType" alias="vich_uploader.form.type.image" public="false"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.ibkqizC"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.6oeiRFl"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>
