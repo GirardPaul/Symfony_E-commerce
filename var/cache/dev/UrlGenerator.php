@@ -34,6 +34,9 @@ return [
     'deconnexion' => [[], ['_controller' => 'App\\Controller\\AdminSecuController::deconnexion'], [], [['text', '/logout']], [], []],
     'categories' => [[], ['_controller' => 'App\\Controller\\CategoriesController::index'], [], [['text', '/categories']], [], []],
     'accueil' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], []],
+    'panier' => [[], ['_controller' => 'App\\Controller\\PanierController::index'], [], [['text', '/client/panier']], [], []],
+    'add_products' => [['id'], ['_controller' => 'App\\Controller\\PanierController::add'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/client/panier/add']], [], []],
+    'remove_products' => [['id'], ['_controller' => 'App\\Controller\\PanierController::remove'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/client/panier/remove']], [], []],
     'produits' => [[], ['_controller' => 'App\\Controller\\ProduitsController::index'], [], [['text', '/client/produits']], [], []],
     'produit' => [['id'], ['_controller' => 'App\\Controller\\ProduitsController::produit'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/client/produit']], [], []],
 ];

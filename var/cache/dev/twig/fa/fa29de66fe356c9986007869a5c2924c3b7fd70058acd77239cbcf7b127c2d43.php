@@ -231,7 +231,10 @@ class __TwigTemplate_6425d8eefa39d094c6b590332743623e7a82f6a4c6036cf7a6507361d4d
                     </div>
                 </div>
             </div>
-            <a href=\"\" class=\"col btn btn-primary w-100\">Ajouter au Panier<i class=\"ml-2 fas fa-cart-plus\"></i></a>
+            <a href=\"";
+            // line 78
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("add_products", ["id" => twig_get_attribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 78)]), "html", null, true);
+            echo "\" class=\"col btn btn-primary w-100\">Ajouter au Panier<i class=\"ml-2 fas fa-cart-plus\"></i></a>
             ";
             // line 79
             if ((isset($context["admin"]) || array_key_exists("admin", $context) ? $context["admin"] : (function () { throw new RuntimeError('Variable "admin" does not exist.', 79, $this->source); })())) {
@@ -302,7 +305,7 @@ class __TwigTemplate_6425d8eefa39d094c6b590332743623e7a82f6a4c6036cf7a6507361d4d
 
     public function getDebugInfo()
     {
-        return array (  278 => 101,  272 => 97,  261 => 91,  252 => 85,  246 => 82,  242 => 81,  239 => 80,  237 => 79,  229 => 73,  217 => 64,  214 => 63,  202 => 54,  199 => 53,  197 => 52,  192 => 50,  188 => 49,  184 => 48,  180 => 47,  174 => 44,  167 => 40,  158 => 33,  154 => 32,  150 => 30,  145 => 28,  142 => 27,  140 => 26,  136 => 25,  125 => 17,  119 => 14,  111 => 9,  108 => 8,  98 => 7,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  281 => 101,  275 => 97,  264 => 91,  255 => 85,  249 => 82,  245 => 81,  242 => 80,  240 => 79,  236 => 78,  229 => 73,  217 => 64,  214 => 63,  202 => 54,  199 => 53,  197 => 52,  192 => 50,  188 => 49,  184 => 48,  180 => 47,  174 => 44,  167 => 40,  158 => 33,  154 => 32,  150 => 30,  145 => 28,  142 => 27,  140 => 26,  136 => 25,  125 => 17,  119 => 14,  111 => 9,  108 => 8,  98 => 7,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -384,7 +387,7 @@ class __TwigTemplate_6425d8eefa39d094c6b590332743623e7a82f6a4c6036cf7a6507361d4d
                     </div>
                 </div>
             </div>
-            <a href=\"\" class=\"col btn btn-primary w-100\">Ajouter au Panier<i class=\"ml-2 fas fa-cart-plus\"></i></a>
+            <a href=\"{{path('add_products', {'id' : produit.id })}}\" class=\"col btn btn-primary w-100\">Ajouter au Panier<i class=\"ml-2 fas fa-cart-plus\"></i></a>
             {% if admin %}
             <div class=\"row no-gutters\">
                 <a href=\"{{path('modif_produits',{'id' : produit.id})}}\" class=\"col btn btn-warning\">Modifier</a>

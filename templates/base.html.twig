@@ -76,6 +76,9 @@
                 {% if is_granted('ROLE_ADMIN') %}
                         <a class="nav-link" href="{{path('espace_admin')}}">Espace Admin</a>
                 {% endif %}
+                {% if app.user %}
+                <a class="nav-link" href="{{path('panier')}}">Panier</a>
+                {% endif %}
         </div>
     </nav>
     <div class="container">

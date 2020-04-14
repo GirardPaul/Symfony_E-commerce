@@ -178,24 +178,33 @@ class __TwigTemplate_b51745ae8f25d2275dbd31eda56706731861b6831c2f9f6970159c2146a
                 ";
         }
         // line 79
+        echo "                ";
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 79, $this->source); })()), "user", [], "any", false, false, false, 79)) {
+            // line 80
+            echo "                <a class=\"nav-link\" href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("panier");
+            echo "\">Panier</a>
+                ";
+        }
+        // line 82
         echo "        </div>
     </nav>
     <div class=\"container\">
 
         <h1 class=\"border border-dark rounded text white m-2 p-2 text-center bg-primary\">
             ";
-        // line 84
+        // line 87
         $this->displayBlock('monTitre', $context, $blocks);
         echo "</h1>
         ";
-        // line 85
+        // line 88
         $this->displayBlock('body', $context, $blocks);
-        // line 86
+        // line 89
         echo "    </div>
     ";
-        // line 87
+        // line 90
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 88
+        // line 91
         echo "    <script src=\"https://kit.fontawesome.com/ed0281b7b3.js\" crossorigin=\"anonymous\"></script>
     <script src=\"https://code.jquery.com/jquery-3.4.1.slim.min.js\"
         integrity=\"sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n\"
@@ -254,7 +263,7 @@ class __TwigTemplate_b51745ae8f25d2275dbd31eda56706731861b6831c2f9f6970159c2146a
 
     }
 
-    // line 84
+    // line 87
     public function block_monTitre($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -272,7 +281,7 @@ class __TwigTemplate_b51745ae8f25d2275dbd31eda56706731861b6831c2f9f6970159c2146a
 
     }
 
-    // line 85
+    // line 88
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -290,7 +299,7 @@ class __TwigTemplate_b51745ae8f25d2275dbd31eda56706731861b6831c2f9f6970159c2146a
 
     }
 
-    // line 87
+    // line 90
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -320,7 +329,7 @@ class __TwigTemplate_b51745ae8f25d2275dbd31eda56706731861b6831c2f9f6970159c2146a
 
     public function getDebugInfo()
     {
-        return array (  294 => 87,  276 => 85,  258 => 84,  240 => 9,  221 => 6,  199 => 88,  197 => 87,  194 => 86,  192 => 85,  188 => 84,  181 => 79,  175 => 77,  173 => 76,  170 => 75,  164 => 72,  158 => 69,  155 => 68,  149 => 65,  143 => 62,  140 => 61,  138 => 60,  132 => 56,  126 => 54,  124 => 53,  119 => 51,  105 => 39,  99 => 37,  97 => 36,  92 => 34,  66 => 10,  64 => 9,  60 => 8,  55 => 6,  48 => 1,);
+        return array (  303 => 90,  285 => 88,  267 => 87,  249 => 9,  230 => 6,  208 => 91,  206 => 90,  203 => 89,  201 => 88,  197 => 87,  190 => 82,  184 => 80,  181 => 79,  175 => 77,  173 => 76,  170 => 75,  164 => 72,  158 => 69,  155 => 68,  149 => 65,  143 => 62,  140 => 61,  138 => 60,  132 => 56,  126 => 54,  124 => 53,  119 => 51,  105 => 39,  99 => 37,  97 => 36,  92 => 34,  66 => 10,  64 => 9,  60 => 8,  55 => 6,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -402,6 +411,9 @@ class __TwigTemplate_b51745ae8f25d2275dbd31eda56706731861b6831c2f9f6970159c2146a
 
                 {% if is_granted('ROLE_ADMIN') %}
                         <a class=\"nav-link\" href=\"{{path('espace_admin')}}\">Espace Admin</a>
+                {% endif %}
+                {% if app.user %}
+                <a class=\"nav-link\" href=\"{{path('panier')}}\">Panier</a>
                 {% endif %}
         </div>
     </nav>

@@ -8,8 +8,8 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
     null,
     [
         'stdClass' => [
-            'type' => [
-                'integer',
+            'length' => [
+                255,
             ],
             'maxMessage' => [
                 1 => 'Votre numéro de téléphone doit contenir moins de 15 caractères',

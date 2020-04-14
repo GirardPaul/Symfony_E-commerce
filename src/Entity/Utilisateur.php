@@ -84,7 +84,7 @@ class Utilisateur implements UserInterface
     private $ville;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string", length=255)
      * @Assert\Length(min=8, max=15, minMessage="Votre téléphone doit contenir plus de 8 caractères", maxMessage="Votre numéro de téléphone doit contenir moins de 15 caractères")
      */
     private $phone;

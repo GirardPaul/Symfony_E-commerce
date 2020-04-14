@@ -6,7 +6,7 @@
 use Symfony\Component\DependencyInjection\Dumper\Preloader;
 
 require dirname(__DIR__, 3).'/vendor/autoload.php';
-require __DIR__.'/ContainerFAQ9Orx/srcApp_KernelDevDebugContainer.php';
+require __DIR__.'/ContainerE6xJXxw/srcApp_KernelDevDebugContainer.php';
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -36,6 +36,7 @@ $classes[] = 'App\Controller\AdminController';
 $classes[] = 'App\Controller\AdminSecuController';
 $classes[] = 'App\Controller\CategoriesController';
 $classes[] = 'App\Controller\HomeController';
+$classes[] = 'App\Controller\PanierController';
 $classes[] = 'App\Controller\ProduitsController';
 $classes[] = 'App\Form\CategoriesType';
 $classes[] = 'App\Form\InscriptionType';

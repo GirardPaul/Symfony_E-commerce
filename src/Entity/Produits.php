@@ -41,9 +41,6 @@ class Produits
     {
         $this->imageFile = $imageFile;
         
-        if($this->imageFile instanceof UploadedFile){
-            $this->updated_at = new \DateTime('now');
-        }
         return $this;
     }
 
@@ -72,11 +69,7 @@ class Produits
      * @ORM\Column(type="string", length=255)
      */
     private $etat;
-
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    private $updated_at;
+    
 
     public function getId(): ?int
     {
@@ -151,18 +144,6 @@ class Produits
     public function setEtat(string $etat): self
     {
         $this->etat = $etat;
-
-        return $this;
-    }
-
-    public function getUpdatedAt(): ?\DateTimeInterface
-    {
-        return $this->updated_at;
-    }
-
-    public function setUpdatedAt(\DateTimeInterface $updated_at): self
-    {
-        $this->updated_at = $updated_at;
 
         return $this;
     }

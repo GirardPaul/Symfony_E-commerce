@@ -75,7 +75,7 @@
                     </div>
                 </div>
             </div>
-            <a href="" class="col btn btn-primary w-100">Ajouter au Panier<i class="ml-2 fas fa-cart-plus"></i></a>
+            <a href="{{path('add_products', {'id' : produit.id })}}" class="col btn btn-primary w-100">Ajouter au Panier<i class="ml-2 fas fa-cart-plus"></i></a>
             {% if admin %}
             <div class="row no-gutters">
                 <a href="{{path('modif_produits',{'id' : produit.id})}}" class="col btn btn-warning">Modifier</a>

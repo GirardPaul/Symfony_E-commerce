@@ -24,6 +24,7 @@ return [
         '/logout' => [[['_route' => 'deconnexion', '_controller' => 'App\\Controller\\AdminSecuController::deconnexion'], null, null, null, false, false, null]],
         '/categories' => [[['_route' => 'categories', '_controller' => 'App\\Controller\\CategoriesController::index'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'accueil', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
+        '/client/panier' => [[['_route' => 'panier', '_controller' => 'App\\Controller\\PanierController::index'], null, null, null, false, false, null]],
         '/client/produits' => [[['_route' => 'produits', '_controller' => 'App\\Controller\\ProduitsController::index'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
@@ -60,7 +61,13 @@ return [
                         .'|modification/([^/]++)(*:332)'
                         .'|suppression/([^/]++)(*:360)'
                     .')'
-                    .'|produit/([^/]++)(*:385)'
+                    .'|p(?'
+                        .'|anier/(?'
+                            .'|add/([^/]++)(*:394)'
+                            .'|remove/([^/]++)(*:417)'
+                        .')'
+                        .'|roduit/([^/]++)(*:441)'
+                    .')'
                 .')'
             .')/?$}sD',
     ],
@@ -84,7 +91,9 @@ return [
         281 => [[['_route' => 'supp_utilisateur', '_controller' => 'App\\Controller\\AdminController::suppressionUtilisateur'], ['id'], ['SUP' => 0], null, false, true, null]],
         332 => [[['_route' => 'modif_client', '_controller' => 'App\\Controller\\AdminController::modificationClient'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
         360 => [[['_route' => 'supp_client', '_controller' => 'App\\Controller\\AdminController::suppressionClient'], ['id'], ['SUP' => 0], null, false, true, null]],
-        385 => [
+        394 => [[['_route' => 'add_products', '_controller' => 'App\\Controller\\PanierController::add'], ['id'], null, null, false, true, null]],
+        417 => [[['_route' => 'remove_products', '_controller' => 'App\\Controller\\PanierController::remove'], ['id'], null, null, false, true, null]],
+        441 => [
             [['_route' => 'produit', '_controller' => 'App\\Controller\\ProduitsController::produit'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
