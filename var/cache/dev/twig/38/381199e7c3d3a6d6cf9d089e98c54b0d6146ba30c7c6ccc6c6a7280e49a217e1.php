@@ -110,29 +110,40 @@ Modification des informations
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 13
-        echo "
+        if (0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 13, $this->source); })()), "user", [], "any", false, false, false, 13), "id", [], "any", false, false, false, 13), twig_get_attribute($this->env, $this->source, (isset($context["utilisateur"]) || array_key_exists("utilisateur", $context) ? $context["utilisateur"] : (function () { throw new RuntimeError('Variable "utilisateur" does not exist.', 13, $this->source); })()), "id", [], "any", false, false, false, 13))) {
+            // line 14
+            echo "
+
+
 ";
-        // line 14
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 14, $this->source); })()), 'form_start');
-        echo "
+            // line 17
+            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 17, $this->source); })()), 'form_start');
+            echo "
 ";
-        // line 15
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 15, $this->source); })()), 'widget');
-        echo "
+            // line 18
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 18, $this->source); })()), 'widget');
+            echo "
 <a class=\"btn btn-primary\" href=\"";
-        // line 16
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("espace_client");
-        echo "\">Retour</a>
+            // line 19
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("espace_client");
+            echo "\">Retour</a>
 <input type=\"submit\" value=\"Valider\" class=\"btn btn-success\">
 ";
-        // line 18
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 18, $this->source); })()), 'form_end');
-        echo "
+            // line 21
+            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 21, $this->source); })()), 'form_end');
+            echo "
 
 
 
 
 ";
+        } else {
+            // line 27
+            echo "<script>window.location.href = \"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("connexion");
+            echo "\" </script>
+";
+        }
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -153,7 +164,7 @@ Modification des informations
 
     public function getDebugInfo()
     {
-        return array (  129 => 18,  124 => 16,  120 => 15,  116 => 14,  113 => 13,  103 => 12,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  142 => 27,  133 => 21,  128 => 19,  124 => 18,  120 => 17,  115 => 14,  113 => 13,  103 => 12,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -170,6 +181,9 @@ Modification des informations
 {% endblock %}
 
 {% block body %}
+{% if app.user.id == utilisateur.id %}
+
+
 
 {{form_start(form)}}
 {{form_widget(form)}}
@@ -180,6 +194,9 @@ Modification des informations
 
 
 
+{% else %}
+<script>window.location.href = \"{{path('connexion')}}\" </script>
+{% endif %}
 {% endblock %}
 ", "admin/modificationClient.html.twig", "/Applications/MAMP/htdocs/ecommerce/templates/admin/modificationClient.html.twig");
     }

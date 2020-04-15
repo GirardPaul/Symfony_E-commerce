@@ -66,10 +66,10 @@ class Categories extends \App\Entity\Categories implements \Doctrine\ORM\Proxy\P
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'libelle', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'image', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'imageFile', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'produits'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'libelle', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'image', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'imageFile', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'produits', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'updated_at'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'libelle', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'image', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'imageFile', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'produits'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'libelle', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'image', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'imageFile', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'produits', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'updated_at'];
     }
 
     /**
@@ -288,6 +288,28 @@ class Categories extends \App\Entity\Categories implements \Doctrine\ORM\Proxy\P
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeProduit', [$produit]);
 
         return parent::removeProduit($produit);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUpdatedAt', []);
+
+        return parent::getUpdatedAt();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setUpdatedAt(\DateTimeInterface $updated_at): \App\Entity\Categories
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setUpdatedAt', [$updated_at]);
+
+        return parent::setUpdatedAt($updated_at);
     }
 
 }

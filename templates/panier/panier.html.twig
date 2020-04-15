@@ -6,6 +6,9 @@
 
 {% block body %}
 
+{% if app.user %}
+
+
 {% if data | length > 0 %}
 
 
@@ -59,6 +62,9 @@
 
 
 
+{% endif %}
+{% else %}
+<script>window.location.href = "{{path('deconnexion')}}" </script>
 {% endif %}
 
 {% endblock %}

@@ -42,6 +42,10 @@ class Produits
     public function setImageFile(?File $imageFile = null): self
     {
         $this->imageFile = $imageFile;
+
+        if($this->imageFile instanceof UploadedFile){
+            $this->updated_at = new \Datetime('now');
+        }
         
         return $this;
     }
@@ -76,6 +80,11 @@ class Produits
      * @ORM\OneToMany(targetEntity="App\Entity\OrderDetail", mappedBy="produit")
      */
     private $orderDetails;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $updated_at;
 
     public function __construct()
     {
@@ -187,6 +196,18 @@ class Produits
                 $orderDetail->setProduit(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updated_at;
+    }
+
+    public function setUpdatedAt(\DateTimeInterface $updated_at): self
+    {
+        $this->updated_at = $updated_at;
 
         return $this;
     }

@@ -6,6 +6,7 @@
 
 {% block body %}
 
+{% if is_granted('ROLE_ADMIN') %}
 
 {% for commande in commandes %}
 
@@ -37,5 +38,8 @@
 {% endfor %}
 
 
+{% else %}
+<script>window.location.href = "{{path('deconnexion')}}" </script>
+{% endif %}
 
 {% endblock %}

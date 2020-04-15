@@ -5,6 +5,8 @@
 {% block monTitre %}Commande n° {{commande[0].order_id.numero_commande}}{% endblock %}
 
 {% block body %}
+
+{% if app.user and app.user.id == commande[0].order_id.user.id or is_granted('ROLE_ADMIN') %}
 <div class="row no-gutters">
 {% for items in commande %}
 
@@ -75,4 +77,8 @@
 </table>
 
 </div>
+
+{% else %}
+<script>window.location.href = "{{path('deconnexion')}}" </script>
+{% endif %}
 {% endblock %}

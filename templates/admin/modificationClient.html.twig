@@ -10,6 +10,9 @@ Modification des informations
 {% endblock %}
 
 {% block body %}
+{% if app.user.id == utilisateur.id %}
+
+
 
 {{form_start(form)}}
 {{form_widget(form)}}
@@ -20,4 +23,7 @@ Modification des informations
 
 
 
+{% else %}
+<script>window.location.href = "{{path('deconnexion')}}" </script>
+{% endif %}
 {% endblock %}

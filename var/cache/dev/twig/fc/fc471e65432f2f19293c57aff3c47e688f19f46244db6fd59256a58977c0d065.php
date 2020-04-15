@@ -66,7 +66,7 @@ class __TwigTemplate_f78a918f9fc910d2f99076cb239afbc84e83ddfd2de6d7573e7adb2141a
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Accueil";
+        echo "Hello HomeController!";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -85,7 +85,7 @@ class __TwigTemplate_f78a918f9fc910d2f99076cb239afbc84e83ddfd2de6d7573e7adb2141a
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "monTitre"));
 
-        echo "Bienvenue dans notre boutique";
+        echo "Bienvenue sur notre site de vente de téléphone";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -94,7 +94,7 @@ class __TwigTemplate_f78a918f9fc910d2f99076cb239afbc84e83ddfd2de6d7573e7adb2141a
 
     }
 
-    // line 7
+    // line 6
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -104,9 +104,13 @@ class __TwigTemplate_f78a918f9fc910d2f99076cb239afbc84e83ddfd2de6d7573e7adb2141a
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
+        // line 7
+        echo "<div class=\"row no-gutters align-items-center\">
+<img src=\"";
         // line 8
-        echo "
-
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("acs.png"), "html", null, true);
+        echo "\" class=\"img-fluid\">
+</div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -128,20 +132,20 @@ class __TwigTemplate_f78a918f9fc910d2f99076cb239afbc84e83ddfd2de6d7573e7adb2141a
 
     public function getDebugInfo()
     {
-        return array (  108 => 8,  98 => 7,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  111 => 8,  108 => 7,  98 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Accueil{% endblock %}
+{% block title %}Hello HomeController!{% endblock %}
 
-{% block monTitre %}Bienvenue dans notre boutique{% endblock %}
-
+{% block monTitre %}Bienvenue sur notre site de vente de téléphone{% endblock %}
 {% block body %}
-
-
+<div class=\"row no-gutters align-items-center\">
+<img src=\"{{asset('acs.png')}}\" class=\"img-fluid\">
+</div>
 {% endblock %}
 ", "home/index.html.twig", "/Applications/MAMP/htdocs/ecommerce/templates/home/index.html.twig");
     }

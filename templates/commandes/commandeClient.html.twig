@@ -5,7 +5,7 @@
 {% block monTitre %}Liste des commandes{% endblock %}
 
 {% block body %}
-
+{% if app.user and app.user.id == user %}
 
 {% for commande in commandes %}
 
@@ -38,6 +38,8 @@
     
 {% endfor %}
 
-
+{% else %}
+<script>window.location.href = "{{path('deconnexion')}}" </script>
+{% endif %}
 
 {% endblock %}

@@ -16,17 +16,20 @@ class AppFixtures extends Fixture
 
         $categorie1 = new Categories();
         $categorie1->setLibelle("Apple")
-        ->setImage("apple.png");
+        ->setImage("apple.png")
+        ->setUpdatedAt(new \DateTime('now'));
         $manager->persist($categorie1);
 
         $categorie2 = new Categories();
         $categorie2->setLibelle("Samsung")
-        ->setImage("samsung.png");
+        ->setImage("samsung.png")
+        ->setUpdatedAt(new \DateTime('now'));
         $manager->persist($categorie2);
 
         $categorie3 = new Categories();
         $categorie3->setLibelle("Huawei")
-        ->setImage("huawei.jpg");
+        ->setImage("huawei.jpg")
+        ->setUpdatedAt(new \DateTime('now'));
         $manager->persist($categorie3);
 
 
@@ -112,7 +115,8 @@ class AppFixtures extends Fixture
                 ->setEtat($faker->regexify("[A-C]{1}"))
         ->setDescription("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
         ->setPrix($faker->numberBetween($min = 400, $max = 650))
-        ->setCategories($categorie1);
+        ->setCategories($categorie1)
+        ->setUpdatedAt(new \DateTime('now'));
         $manager->persist($produit1);
 
         $produit2 = new Produits();
@@ -121,7 +125,8 @@ class AppFixtures extends Fixture
         ->setEtat($faker->regexify("[A-C]{1}"))
         ->setDescription("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
         ->setPrix($faker->numberBetween($min = 300, $max = 450))
-        ->setCategories($categorie1);
+        ->setCategories($categorie1)
+        ->setUpdatedAt(new \DateTime('now'));
         $manager->persist($produit2);
 
         $produit3 = new Produits();
@@ -130,7 +135,8 @@ class AppFixtures extends Fixture
         ->setEtat($faker->regexify("[A-C]{1}"))
         ->setDescription("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
         ->setPrix($faker->numberBetween($min = 480, $max = 800))
-        ->setCategories($categorie1);
+        ->setCategories($categorie1)
+        ->setUpdatedAt(new \DateTime('now'));
         $manager->persist($produit3);
 
         $produit4 = new Produits();
@@ -139,7 +145,8 @@ class AppFixtures extends Fixture
         ->setEtat($faker->regexify("[A-C]{1}"))
         ->setDescription("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
         ->setPrix($faker->numberBetween($min = 450, $max = 730))
-        ->setCategories($categorie2);
+        ->setCategories($categorie2)
+        ->setUpdatedAt(new \DateTime('now'));
         $manager->persist($produit4);
 
         $produit5 = new Produits();
@@ -148,7 +155,8 @@ class AppFixtures extends Fixture
         ->setEtat($faker->regexify("[A-C]{1}"))
         ->setDescription("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
         ->setPrix($faker->numberBetween($min = 300, $max = 450))
-        ->setCategories($categorie2);
+        ->setCategories($categorie2)
+        ->setUpdatedAt(new \DateTime('now'));
         $manager->persist($produit5);
 
         $produit6 = new Produits();
@@ -157,7 +165,8 @@ class AppFixtures extends Fixture
         ->setEtat($faker->regexify("[A-C]{1}"))
         ->setDescription("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
         ->setPrix($faker->numberBetween($min = 500, $max = 650))
-        ->setCategories($categorie2);
+        ->setCategories($categorie2)
+        ->setUpdatedAt(new \DateTime('now'));
         $manager->persist($produit6);
 
         $produit7 = new Produits();
@@ -166,7 +175,8 @@ class AppFixtures extends Fixture
         ->setEtat($faker->regexify("[A-C]{1}"))
         ->setDescription("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
         ->setPrix($faker->numberBetween($min = 400, $max = 500))
-        ->setCategories($categorie3);
+        ->setCategories($categorie3)
+        ->setUpdatedAt(new \DateTime('now'));
         $manager->persist($produit7);
 
         $produit8 = new Produits();
@@ -175,7 +185,8 @@ class AppFixtures extends Fixture
         ->setEtat($faker->regexify("[A-C]{1}"))
         ->setDescription("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
         ->setPrix($faker->numberBetween($min = 280, $max = 390))
-        ->setCategories($categorie3);
+        ->setCategories($categorie3)
+        ->setUpdatedAt(new \DateTime('now'));
         $manager->persist($produit8);
 
         $produit9 = new Produits();
@@ -184,7 +195,8 @@ class AppFixtures extends Fixture
         ->setEtat($faker->regexify("[A-C]{1}"))
         ->setDescription("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
         ->setPrix($faker->numberBetween($min = 300, $max = 420))
-        ->setCategories($categorie3);
+        ->setCategories($categorie3)
+        ->setUpdatedAt(new \DateTime('now'));
         $manager->persist($produit9);
 
         $produit10 = new Produits();
@@ -193,7 +205,8 @@ class AppFixtures extends Fixture
         ->setEtat($faker->regexify("[A-C]{1}"))
         ->setDescription("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
         ->setPrix($faker->numberBetween($min = 300, $max = 420))
-        ->setCategories($categorie1);
+        ->setCategories($categorie1)
+        ->setUpdatedAt(new \DateTime('now'));
         $manager->persist($produit10);
 
         $produit11 = new Produits();
@@ -202,7 +215,8 @@ class AppFixtures extends Fixture
         ->setEtat($faker->regexify("[A-C]{1}"))
         ->setDescription("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
         ->setPrix($faker->numberBetween($min = 750, $max = 950))
-        ->setCategories($categorie1);
+        ->setCategories($categorie1)
+        ->setUpdatedAt(new \DateTime('now'));
         $manager->persist($produit11);
 
         $produit12 = new Produits();
@@ -211,7 +225,8 @@ class AppFixtures extends Fixture
         ->setEtat($faker->regexify("[A-C]{1}"))
         ->setDescription("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
         ->setPrix($faker->numberBetween($min = 180, $max = 250))
-        ->setCategories($categorie2);
+        ->setCategories($categorie2)
+        ->setUpdatedAt(new \DateTime('now'));
         $manager->persist($produit12);
 
         $produit13 = new Produits();
@@ -220,7 +235,8 @@ class AppFixtures extends Fixture
         ->setEtat($faker->regexify("[A-C]{1}"))
         ->setDescription("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
         ->setPrix($faker->numberBetween($min = 780, $max = 950))
-        ->setCategories($categorie2);
+        ->setCategories($categorie2)
+        ->setUpdatedAt(new \DateTime('now'));
         $manager->persist($produit13);
         
         $produit14 = new Produits();
@@ -229,7 +245,8 @@ class AppFixtures extends Fixture
         ->setEtat($faker->regexify("[A-C]{1}"))
         ->setDescription("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
         ->setPrix($faker->numberBetween($min = 100, $max = 180))
-        ->setCategories($categorie3);
+        ->setCategories($categorie3)
+        ->setUpdatedAt(new \DateTime('now'));
         $manager->persist($produit14);
         
         $produit15 = new Produits();
@@ -238,7 +255,8 @@ class AppFixtures extends Fixture
         ->setEtat($faker->regexify("[A-C]{1}"))
         ->setDescription("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
         ->setPrix($faker->numberBetween($min = 500, $max = 780))
-        ->setCategories($categorie3);
+        ->setCategories($categorie3)
+        ->setUpdatedAt(new \DateTime('now'));
         $manager->persist($produit15);
             }
         

@@ -106,14 +106,18 @@ class __TwigTemplate_5a2ff4462edd494d5e9e65b72ed81d74654662af1640e867ee7fb02f738
 
         // line 8
         echo "
-
 ";
-        // line 10
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["commandes"]) || array_key_exists("commandes", $context) ? $context["commandes"] : (function () { throw new RuntimeError('Variable "commandes" does not exist.', 10, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["commande"]) {
-            // line 11
+        // line 9
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+            // line 10
             echo "
+";
+            // line 11
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["commandes"]) || array_key_exists("commandes", $context) ? $context["commandes"] : (function () { throw new RuntimeError('Variable "commandes" does not exist.', 11, $this->source); })()));
+            foreach ($context['_seq'] as $context["_key"] => $context["commande"]) {
+                // line 12
+                echo "
 <table class=\"table\">
     <thead>
         <tr>
@@ -128,22 +132,22 @@ class __TwigTemplate_5a2ff4462edd494d5e9e65b72ed81d74654662af1640e867ee7fb02f738
 
         <tr>
             <td>";
-            // line 25
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["commande"], "numero_commande", [], "any", false, false, false, 25), "html", null, true);
-            echo "</td>
+                // line 26
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["commande"], "numero_commande", [], "any", false, false, false, 26), "html", null, true);
+                echo "</td>
             <td>";
-            // line 26
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["commande"], "user", [], "any", false, false, false, 26), "mail", [], "any", false, false, false, 26), "html", null, true);
-            echo "</td>
+                // line 27
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["commande"], "user", [], "any", false, false, false, 27), "mail", [], "any", false, false, false, 27), "html", null, true);
+                echo "</td>
             <td>";
-            // line 27
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["commande"], "date", [], "any", false, false, false, 27), "d-m-Y H:i:s"), "html", null, true);
-            echo "</td>
+                // line 28
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["commande"], "date", [], "any", false, false, false, 28), "d-m-Y H:i:s"), "html", null, true);
+                echo "</td>
             <td>
                 <a href=\"";
-            // line 29
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("affichage_commande", ["order" => twig_get_attribute($this->env, $this->source, $context["commande"], "id", [], "any", false, false, false, 29)]), "html", null, true);
-            echo "\" class=\"btn btn-primary btn-sm\">
+                // line 30
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("affichage_commande", ["order" => twig_get_attribute($this->env, $this->source, $context["commande"], "id", [], "any", false, false, false, 30)]), "html", null, true);
+                echo "\" class=\"btn btn-primary btn-sm\">
                     <i class=\"fas fa-search\"></i>
             </td>
         </tr>
@@ -152,14 +156,23 @@ class __TwigTemplate_5a2ff4462edd494d5e9e65b72ed81d74654662af1640e867ee7fb02f738
 
     
 ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['commande'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 39
+            echo "
+
+";
+        } else {
+            // line 42
+            echo "<script>window.location.href = \"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("deconnexion");
+            echo "\" </script>
+";
         }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['commande'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 38
+        // line 44
         echo "
-
-
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -181,7 +194,7 @@ class __TwigTemplate_5a2ff4462edd494d5e9e65b72ed81d74654662af1640e867ee7fb02f738
 
     public function getDebugInfo()
     {
-        return array (  160 => 38,  145 => 29,  140 => 27,  136 => 26,  132 => 25,  116 => 11,  112 => 10,  108 => 8,  98 => 7,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  175 => 44,  169 => 42,  164 => 39,  149 => 30,  144 => 28,  140 => 27,  136 => 26,  120 => 12,  116 => 11,  113 => 10,  111 => 9,  108 => 8,  98 => 7,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -194,6 +207,7 @@ class __TwigTemplate_5a2ff4462edd494d5e9e65b72ed81d74654662af1640e867ee7fb02f738
 
 {% block body %}
 
+{% if is_granted('ROLE_ADMIN') %}
 
 {% for commande in commandes %}
 
@@ -225,6 +239,9 @@ class __TwigTemplate_5a2ff4462edd494d5e9e65b72ed81d74654662af1640e867ee7fb02f738
 {% endfor %}
 
 
+{% else %}
+<script>window.location.href = \"{{path('deconnexion')}}\" </script>
+{% endif %}
 
 {% endblock %}", "commandes/commandesClient.html.twig", "/Applications/MAMP/htdocs/ecommerce/templates/commandes/commandesClient.html.twig");
     }

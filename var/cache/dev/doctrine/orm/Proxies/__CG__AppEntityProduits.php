@@ -66,10 +66,10 @@ class Produits extends \App\Entity\Produits implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Produits' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Produits' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\Produits' . "\0" . 'image', '' . "\0" . 'App\\Entity\\Produits' . "\0" . 'imageFile', '' . "\0" . 'App\\Entity\\Produits' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Produits' . "\0" . 'prix', '' . "\0" . 'App\\Entity\\Produits' . "\0" . 'categories', '' . "\0" . 'App\\Entity\\Produits' . "\0" . 'etat', '' . "\0" . 'App\\Entity\\Produits' . "\0" . 'orderDetails'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Produits' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Produits' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\Produits' . "\0" . 'image', '' . "\0" . 'App\\Entity\\Produits' . "\0" . 'imageFile', '' . "\0" . 'App\\Entity\\Produits' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Produits' . "\0" . 'prix', '' . "\0" . 'App\\Entity\\Produits' . "\0" . 'categories', '' . "\0" . 'App\\Entity\\Produits' . "\0" . 'etat', '' . "\0" . 'App\\Entity\\Produits' . "\0" . 'orderDetails', '' . "\0" . 'App\\Entity\\Produits' . "\0" . 'updated_at'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Produits' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Produits' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\Produits' . "\0" . 'image', '' . "\0" . 'App\\Entity\\Produits' . "\0" . 'imageFile', '' . "\0" . 'App\\Entity\\Produits' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Produits' . "\0" . 'prix', '' . "\0" . 'App\\Entity\\Produits' . "\0" . 'categories', '' . "\0" . 'App\\Entity\\Produits' . "\0" . 'etat', '' . "\0" . 'App\\Entity\\Produits' . "\0" . 'orderDetails'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Produits' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Produits' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\Produits' . "\0" . 'image', '' . "\0" . 'App\\Entity\\Produits' . "\0" . 'imageFile', '' . "\0" . 'App\\Entity\\Produits' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Produits' . "\0" . 'prix', '' . "\0" . 'App\\Entity\\Produits' . "\0" . 'categories', '' . "\0" . 'App\\Entity\\Produits' . "\0" . 'etat', '' . "\0" . 'App\\Entity\\Produits' . "\0" . 'orderDetails', '' . "\0" . 'App\\Entity\\Produits' . "\0" . 'updated_at'];
     }
 
     /**
@@ -376,6 +376,28 @@ class Produits extends \App\Entity\Produits implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeOrderDetail', [$orderDetail]);
 
         return parent::removeOrderDetail($orderDetail);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUpdatedAt', []);
+
+        return parent::getUpdatedAt();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setUpdatedAt(\DateTimeInterface $updated_at): \App\Entity\Produits
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setUpdatedAt', [$updated_at]);
+
+        return parent::setUpdatedAt($updated_at);
     }
 
 }

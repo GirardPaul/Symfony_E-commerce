@@ -41,13 +41,12 @@ class Categories
     public function setImageFile(?File $imageFile = null): self
     {
         $this->imageFile = $imageFile;
-        return $this;
 
-        // if (null !== $imageFile) {
-        //     // It is required that at least one field changes if you are using doctrine
-        //     // otherwise the event listeners won't be called and the file is lost
-        //     $this->updatedAt = new \DateTimeImmutable();
-        // }
+        if($this->imageFile instanceof UploadedFile){
+            $this->updated_at = new \Datetime('now');
+        }
+        
+        return $this;
     }
 
     public function getImageFile(): ?File
@@ -60,6 +59,11 @@ class Categories
      * @ORM\OneToMany(targetEntity="App\Entity\Produits", mappedBy="categories")
      */
     private $produits;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $updated_at;
 
 
     public function __construct()
@@ -123,6 +127,18 @@ class Categories
                 $produit->setCategories(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updated_at;
+    }
+
+    public function setUpdatedAt(\DateTimeInterface $updated_at): self
+    {
+        $this->updated_at = $updated_at;
 
         return $this;
     }

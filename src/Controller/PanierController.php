@@ -89,6 +89,8 @@ class PanierController extends AbstractController
         
         $panier = $session->get('panier', []);
 
+        
+
         $data = [];
 
         foreach($panier as $id => $quantity){
@@ -144,6 +146,24 @@ class PanierController extends AbstractController
             $objectManager->flush();
         }
 
+
+
+       
+
+        $panier = $session->get('panier', []);
+
+        foreach ($panier as $key => $value) {
+
+            if(!empty($panier[$key])){
+            unset($panier[$key]);
+        }
+    }
+        $session->set('panier', $panier);
+
+        
+
+    
+
         return $this->redirectToRoute("produits");
 
     }
@@ -168,9 +188,12 @@ class PanierController extends AbstractController
     {
 
         $order = $orderRepository->getCommandeParClient($user);
+
+ 
         
         return $this->render('commandes/commandeClient.html.twig', [
             "commandes" => $order,
+            "user" => $user
         ]);
     }
     /**
