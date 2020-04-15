@@ -19,6 +19,16 @@ class OrderRepository extends ServiceEntityRepository
         parent::__construct($registry, Order::class);
     }
 
+    public function getCommandeParClient($user){
+        //Génération d'une requête appelée 'o'
+        return $this->createQueryBuilder('o')
+            ->andWhere('o.user = :val')
+            ->setParameter('val', $user)
+            ->orderBy('o.id', 'ASC')
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Order[] Returns an array of Order objects
     //  */

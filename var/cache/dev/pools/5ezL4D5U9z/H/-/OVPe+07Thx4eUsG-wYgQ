@@ -8,7 +8,7 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
     [
         'Symfony\\Component\\Routing\\Annotation\\Route' => [
             'path' => [
-                '/client/espace/commande',
+                '/client/espace/commande/{user}',
             ],
             'name' => [
                 'commande_client',

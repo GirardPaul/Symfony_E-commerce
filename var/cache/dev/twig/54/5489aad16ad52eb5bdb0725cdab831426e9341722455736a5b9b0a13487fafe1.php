@@ -159,6 +159,10 @@ class __TwigTemplate_47b8a34ad5ef082bf4569579c4d8b2bd255b9734e7c921b52e690481d03
         <input type=\"submit\" value=\"Supprimer\" class=\"btn btn-danger\">
     </form>
 </div>
+<a href=\"";
+        // line 29
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("commande_client", ["user" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 29, $this->source); })()), "id", [], "any", false, false, false, 29)]), "html", null, true);
+        echo "\" class=\"mt-3 btn btn-primary w-25\">Liste des commandes</a>
 
 </div>
     
@@ -188,7 +192,7 @@ class __TwigTemplate_47b8a34ad5ef082bf4569579c4d8b2bd255b9734e7c921b52e690481d03
 
     public function getDebugInfo()
     {
-        return array (  157 => 25,  152 => 23,  147 => 21,  141 => 18,  137 => 17,  133 => 16,  129 => 15,  125 => 14,  121 => 13,  117 => 12,  113 => 11,  108 => 8,  98 => 7,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  164 => 29,  157 => 25,  152 => 23,  147 => 21,  141 => 18,  137 => 17,  133 => 16,  129 => 15,  125 => 14,  121 => 13,  117 => 12,  113 => 11,  108 => 8,  98 => 7,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -221,6 +225,7 @@ class __TwigTemplate_47b8a34ad5ef082bf4569579c4d8b2bd255b9734e7c921b52e690481d03
         <input type=\"submit\" value=\"Supprimer\" class=\"btn btn-danger\">
     </form>
 </div>
+<a href=\"{{path('commande_client',{'user' : user.id})}}\" class=\"mt-3 btn btn-primary w-25\">Liste des commandes</a>
 
 </div>
     

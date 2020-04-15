@@ -19,6 +19,16 @@ class OrderDetailRepository extends ServiceEntityRepository
         parent::__construct($registry, OrderDetail::class);
     }
 
+    public function affichageCommandeClient($order){
+        //Génération d'une requête appelée 'o'
+        return $this->createQueryBuilder('o')
+            ->andWhere('o.order_id = :val')
+            ->setParameter('val', $order)
+            ->orderBy('o.id', 'ASC')
+            ->getQuery()
+            ->getResult();
+    }
+}
     // /**
     //  * @return OrderDetail[] Returns an array of OrderDetail objects
     //  */
@@ -47,4 +57,3 @@ class OrderDetailRepository extends ServiceEntityRepository
         ;
     }
     */
-}

@@ -13,6 +13,7 @@
     <thead>
         <tr>
             <th>Numéro de commande</th>
+            <th>Client</th>
             <th>Date</th>
             <th>Détail de la commande</th>
         </tr>
@@ -22,9 +23,10 @@
 
         <tr>
             <td>{{commande.numero_commande}}</td>
+            <td>{{commande.user.mail}}</td>
             <td>{{commande.date |date('d-m-Y H:i:s') }}</td>
             <td>
-                <a href="{{path('commande_client', {'id' : commande.id })}}" class="btn btn-primary btn-sm">
+                <a href="{{path('affichage_commande', {'order' : commande.id })}}" class="btn btn-primary btn-sm">
                     <i class="fas fa-search"></i>
             </td>
         </tr>

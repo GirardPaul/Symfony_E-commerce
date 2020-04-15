@@ -38,8 +38,9 @@ return [
     'add_products' => [['id'], ['_controller' => 'App\\Controller\\PanierController::add'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/client/panier/add']], [], []],
     'remove_products' => [['id'], ['_controller' => 'App\\Controller\\PanierController::remove'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/client/panier/remove']], [], []],
     'commande' => [[], ['_controller' => 'App\\Controller\\PanierController::commande'], [], [['text', '/client/panier/commande']], [], []],
-    'commandes_client' => [[], ['_controller' => 'App\\Controller\\PanierController::commandesClient'], [], [['text', '/admin/espace/commandes']], [], []],
-    'commande_client' => [[], ['_controller' => 'App\\Controller\\PanierController::commandeClient'], [], [['text', '/client/espace/commande']], [], []],
+    'commandes_client' => [[], ['_controller' => 'App\\Controller\\PanierController::adminCommandesClient'], [], [['text', '/admin/espace/commandes']], [], []],
+    'commande_client' => [['user'], ['_controller' => 'App\\Controller\\PanierController::commandeClient'], [], [['variable', '/', '[^/]++', 'user'], ['text', '/client/espace/commande']], [], []],
+    'affichage_commande' => [['order'], ['_controller' => 'App\\Controller\\PanierController::affichageCommande'], [], [['variable', '/', '[^/]++', 'order'], ['text', '/client/espace/affichage/commande']], [], []],
     'produits' => [[], ['_controller' => 'App\\Controller\\ProduitsController::index'], [], [['text', '/client/produits']], [], []],
     'produit' => [['id'], ['_controller' => 'App\\Controller\\ProduitsController::produit'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/client/produit']], [], []],
 ];

@@ -129,13 +129,14 @@ class PanierController extends AbstractController
         $order->setDate(new \DateTime('now'));
         $order->setnumero_commande($numero_commande);
         $order->setUser($this->getUser());
+        $order->setTotal($total);
 
         $objectManager->persist($order);
         $objectManager->flush();
 
         for ($i=0; $i < count($data); $i++) { 
             $orderDetail = new OrderDetail();
-            $orderDetail->setOrderId($order);
+            $orderDetail->setorder_id($order);
             $orderDetail->setProduit($data[$i]['product']);
             $orderDetail->setQuantity($data[$i]['quantity']);
             $orderDetail->setPrix($data[$i]['quantity'] * $data[$i]['product']->getPrix());
@@ -150,11 +151,10 @@ class PanierController extends AbstractController
      /**
      * @Route("/admin/espace/commandes", name="commandes_client")
      */
-    public function commandesClient(OrderRepository $orderRepository)
+    public function adminCommandesClient(OrderRepository $orderRepository)
     {
 
         $order = $orderRepository->findAll();
-
 
         return $this->render('commandes/commandesClient.html.twig', [
             "commandes" => $order,
@@ -162,18 +162,29 @@ class PanierController extends AbstractController
         ]);
     }
      /**
-     * @Route("/client/espace/commande", name="commande_client")
+     * @Route("/client/espace/commande/{user}", name="commande_client")
      */
-    public function commandeClient(OrderDetailRepository $orderDetailRepository)
+    public function commandeClient($user, OrderRepository $orderRepository)
     {
 
-        $orderDetail = $orderDetailRepository->findAll();
-
-        dd($orderDetail);
-
-        return $this->render('commandes/commandesClient.html.twig', [
-            "commandes" => $orderDetail,
+        $order = $orderRepository->getCommandeParClient($user);
+        
+        return $this->render('commandes/commandeClient.html.twig', [
+            "commandes" => $order,
         ]);
     }
-    
+    /**
+     * @Route("/client/espace/affichage/commande/{order}", name="affichage_commande")
+     */
+    public function affichageCommande($order, OrderDetailRepository $orderDetailRepository)
+    {
+
+        $commande = $orderDetailRepository->affichageCommandeClient($order);
+
+       
+        
+        return $this->render('commandes/affichageCommande.html.twig', [
+            "commande" => $commande,
+        ]);
+    }
 }

@@ -77,12 +77,12 @@ class OrderDetail
         return $this;
     }
 
-    public function getOrderId(): ?Order
+    public function getorder_id(): ?Order
     {
         return $this->order_id;
     }
 
-    public function setOrderId(?Order $order_id): self
+    public function setorder_id(?Order $order_id): self
     {
         $this->order_id = $order_id;
 

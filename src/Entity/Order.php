@@ -39,6 +39,11 @@ class Order
      */
     private $numero_commande;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $total;
+
     public function __construct()
     {
         $this->orderDetails = new ArrayCollection();
@@ -112,6 +117,18 @@ class Order
     public function setnumero_commande(string $numero_commande): self
     {
         $this->numero_commande = $numero_commande;
+
+        return $this;
+    }
+
+    public function getTotal(): ?string
+    {
+        return $this->total;
+    }
+
+    public function setTotal(string $total): self
+    {
+        $this->total = $total;
 
         return $this;
     }

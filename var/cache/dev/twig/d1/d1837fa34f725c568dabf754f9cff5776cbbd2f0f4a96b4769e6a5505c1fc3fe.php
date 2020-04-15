@@ -118,6 +118,7 @@ class __TwigTemplate_5a2ff4462edd494d5e9e65b72ed81d74654662af1640e867ee7fb02f738
     <thead>
         <tr>
             <th>Numéro de commande</th>
+            <th>Client</th>
             <th>Date</th>
             <th>Détail de la commande</th>
         </tr>
@@ -127,17 +128,21 @@ class __TwigTemplate_5a2ff4462edd494d5e9e65b72ed81d74654662af1640e867ee7fb02f738
 
         <tr>
             <td>";
-            // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["commande"], "numero_commande", [], "any", false, false, false, 24), "html", null, true);
+            // line 25
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["commande"], "numero_commande", [], "any", false, false, false, 25), "html", null, true);
             echo "</td>
             <td>";
-            // line 25
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["commande"], "date", [], "any", false, false, false, 25), "d-m-Y H:i:s"), "html", null, true);
+            // line 26
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["commande"], "user", [], "any", false, false, false, 26), "mail", [], "any", false, false, false, 26), "html", null, true);
+            echo "</td>
+            <td>";
+            // line 27
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["commande"], "date", [], "any", false, false, false, 27), "d-m-Y H:i:s"), "html", null, true);
             echo "</td>
             <td>
                 <a href=\"";
-            // line 27
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("commande_client", ["id" => twig_get_attribute($this->env, $this->source, $context["commande"], "id", [], "any", false, false, false, 27)]), "html", null, true);
+            // line 29
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("affichage_commande", ["order" => twig_get_attribute($this->env, $this->source, $context["commande"], "id", [], "any", false, false, false, 29)]), "html", null, true);
             echo "\" class=\"btn btn-primary btn-sm\">
                     <i class=\"fas fa-search\"></i>
             </td>
@@ -151,7 +156,7 @@ class __TwigTemplate_5a2ff4462edd494d5e9e65b72ed81d74654662af1640e867ee7fb02f738
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['commande'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 36
+        // line 38
         echo "
 
 
@@ -176,7 +181,7 @@ class __TwigTemplate_5a2ff4462edd494d5e9e65b72ed81d74654662af1640e867ee7fb02f738
 
     public function getDebugInfo()
     {
-        return array (  155 => 36,  140 => 27,  135 => 25,  131 => 24,  116 => 11,  112 => 10,  108 => 8,  98 => 7,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  160 => 38,  145 => 29,  140 => 27,  136 => 26,  132 => 25,  116 => 11,  112 => 10,  108 => 8,  98 => 7,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -196,6 +201,7 @@ class __TwigTemplate_5a2ff4462edd494d5e9e65b72ed81d74654662af1640e867ee7fb02f738
     <thead>
         <tr>
             <th>Numéro de commande</th>
+            <th>Client</th>
             <th>Date</th>
             <th>Détail de la commande</th>
         </tr>
@@ -205,9 +211,10 @@ class __TwigTemplate_5a2ff4462edd494d5e9e65b72ed81d74654662af1640e867ee7fb02f738
 
         <tr>
             <td>{{commande.numero_commande}}</td>
+            <td>{{commande.user.mail}}</td>
             <td>{{commande.date |date('d-m-Y H:i:s') }}</td>
             <td>
-                <a href=\"{{path('commande_client', {'id' : commande.id })}}\" class=\"btn btn-primary btn-sm\">
+                <a href=\"{{path('affichage_commande', {'order' : commande.id })}}\" class=\"btn btn-primary btn-sm\">
                     <i class=\"fas fa-search\"></i>
             </td>
         </tr>

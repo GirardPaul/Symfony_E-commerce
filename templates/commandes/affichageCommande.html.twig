@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Affichage commande{% endblock %}
+
+{% block monTitre %}Commande n° {{commande[0].order_id.numero_commande}}{% endblock %}
+
+{% block body %}
+<div class="row no-gutters">
+{% for items in commande %}
+
+<div class="col-12 col-lg-6 p-1">
+
+
+    <div class="card mb-3">
+        <div class="row no-gutters align-items-center p-2">
+            <div class="col-12 col-md-4">
+                <img class="card-img" style="width: 180px; height: 220px;"
+                    src="{{asset('produits/' ~ items.produit.image)}}">
+            </div>
+            <div class="col">
+                <div class="card-body">
+                    <h4 class="card-title">{{items.produit.nom}}</h4>
+                    <p class="card-text">
+
+                        <div><strong>Marque :</strong> {{items.produit.categories.libelle}}</div>
+                        <div><strong>Déscription :</strong> {{items.produit.description}}</div>
+                        <div><strong>Prix :</strong> {{items.produit.prix}}€</div>
+                        <div><strong>Grade :</strong> {{items.produit.etat}}</div>
+                        <div><strong>Quantité :</strong> {{items.quantity}}</div>
+
+                       
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+<h1 class="border border-dark rounded text white m-2 p-2 text-center bg-primary w-100 text-center">Récapitulatif de la commande</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Produit</th>
+            <th>Marque</th>
+            <th>Prix</th>
+            <th>Grade</th>
+            <th>Quantité</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    
+    {% for item in commande %}
+    <tbody>
+        
+        <tr>
+            <td>{{item.produit.nom}}</td>
+            <td>{{item.produit.categories.libelle}}</td>
+            <td>{{item.produit.prix}}€</td>
+            <td>{{item.produit.etat}}</td>
+            <td>{{item.quantity}}</td>
+            <td>{{item.produit.prix * item.quantity }}€</td>
+        </tr>
+        
+    </tbody>
+    {% endfor %}
+    <tfoot>
+        <tr>
+            <td colspan="5" class="text-right">Total : </td>
+            <td>{{commande[0].order_id.total}}€</td>
+            
+        </tr>
+    </tfoot>
+</table>
+
+</div>
+{% endblock %}

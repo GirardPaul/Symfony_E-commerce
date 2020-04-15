@@ -66,10 +66,10 @@ class Order extends \App\Entity\Order implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Order' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Order' . "\0" . 'date', '' . "\0" . 'App\\Entity\\Order' . "\0" . 'user', '' . "\0" . 'App\\Entity\\Order' . "\0" . 'orderDetails', '' . "\0" . 'App\\Entity\\Order' . "\0" . 'numero_commande'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Order' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Order' . "\0" . 'date', '' . "\0" . 'App\\Entity\\Order' . "\0" . 'user', '' . "\0" . 'App\\Entity\\Order' . "\0" . 'orderDetails', '' . "\0" . 'App\\Entity\\Order' . "\0" . 'numero_commande', '' . "\0" . 'App\\Entity\\Order' . "\0" . 'total'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Order' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Order' . "\0" . 'date', '' . "\0" . 'App\\Entity\\Order' . "\0" . 'user', '' . "\0" . 'App\\Entity\\Order' . "\0" . 'orderDetails', '' . "\0" . 'App\\Entity\\Order' . "\0" . 'numero_commande'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Order' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Order' . "\0" . 'date', '' . "\0" . 'App\\Entity\\Order' . "\0" . 'user', '' . "\0" . 'App\\Entity\\Order' . "\0" . 'orderDetails', '' . "\0" . 'App\\Entity\\Order' . "\0" . 'numero_commande', '' . "\0" . 'App\\Entity\\Order' . "\0" . 'total'];
     }
 
     /**
@@ -288,6 +288,28 @@ class Order extends \App\Entity\Order implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setnumero_commande', [$numero_commande]);
 
         return parent::setnumero_commande($numero_commande);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getTotal(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getTotal', []);
+
+        return parent::getTotal();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setTotal(string $total): \App\Entity\Order
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setTotal', [$total]);
+
+        return parent::setTotal($total);
     }
 
 }

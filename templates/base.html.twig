@@ -71,25 +71,28 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{path('espace_client')}}">Espace Client</a>
                     </li>
+                    
                 {% endif %}
 
                 {% if is_granted('ROLE_ADMIN') %}
                         <a class="nav-link" href="{{path('espace_admin')}}">Espace Admin</a>
                 {% endif %}
-                {% if app.user %}
+                {% if is_granted('ROLE_ADMIN') %}
                 <li class="nav-item">
                     <a class="nav-link" href="{{path('commandes_client')}}">Liste des commandes</a>
                 </li>
+                {% endif %}
                 <a class="nav-link" href="{{path('panier')}}">Panier</a>
 
-                {% endif %}
         </div>
     </nav>
     <div class="container">
 
         <h1 class="border border-dark rounded text white m-2 p-2 text-center bg-primary">
             {% block monTitre %}{% endblock %}</h1>
-        {% block body %}{% endblock %}
+            
+        {% block body %}
+        {% endblock %}
     </div>
     {% block javascripts %}{% endblock %}
     <script src="https://kit.fontawesome.com/ed0281b7b3.js" crossorigin="anonymous"></script>
